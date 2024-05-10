@@ -1,0 +1,68 @@
+@media (min-width: 768px){
+    .col3{
+        flex: 0 0 auto;
+        width: 24%;
+    }
+}
+.sortcolor{
+    color: white;
+}
+.reject{
+    background-color: #efdada ;
+  }
+.acknowledge {
+    background-color: #c9eebb;
+}
+.new{
+    background-color: #ffffff;
+}
+.box {
+    float: left;
+    height: 10px;
+    width: 10px;
+    margin-top: 5px;
+    border: 1px solid #d1d5db;
+    clear: both;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  @media (min-width: 768px){
+    .texta{
+      text-align: end;
+    }
+}
+@media screen and (max-width: 991px) {
+  .textab{
+    text-align: center;
+    font-weight: bold;
+  }
+  .show{
+    display: block;
+  }
+}
+.ackwidth{
+  min-width: 20rem;
+}
+.dropwidth{
+  width: 135px;
+}
+ol, ul {
+  padding-left: 1rem !important
+}
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+.hide {
+  display: none;
+}

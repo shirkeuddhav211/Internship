@@ -1,0 +1,120 @@
+ 
+  <div class="grid">
+    <div class="col-12">
+        <div class="card ">
+            <h2 style="text-align: center;" >Registration </h2>
+          <div class="card-body">
+            <div class="p-fluid p-formgrid grid">
+                <div class="col-12">
+                    <div >
+                        <div class="card p-fluid">
+                            <!-- <h5 style="text-align: center; padding-bottom: 10px;">User info</h5> -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="firstname2">First Name</label>
+                                        <input pInputText id="firstname2" type="text" [(ngModel)]="Register.FirstName" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="lastname2">Last Name</label>
+                                        <input pInputText id="lastname2" type="text" [(ngModel)]="Register.LastName" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="email2">Email</label>
+                                        <input pInputText id="email2" type="email" [(ngModel)]="Register.Email" (change)="onEmailChange(Register.Email)" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="firstname2">User Name</label>
+                                        <input pInputText id="firstname2" type="text" [(ngModel)]="Register.Email" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="lastname2">Password</label>
+                                        <input pInputText id="password" type="password" [(ngModel)]="Register.Password" />
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="field">
+                                        <label class="lableshow" htmlFor="email2">Confirm Password</label>
+                                        <input pInputText id="confirmpassword" type="password" [(ngModel)]="Register.Password" />
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6">
+                                    <div class="field ">
+                                        <label class="lableshow" for="role">Role:</label>
+                                        <p-dropdown [options]="roleList" optionLabel="Name" optionValue="Name" [(ngModel)]="Register.RoleName"  [readonly]="true">
+
+                                        </p-dropdown>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-md-6">
+                                    <div class="field ">
+                                        <label class="lableshow" for="department">Department:</label>
+                                        <p-dropdown [options]="deparments" optionLabel="name" optionValue="name" [(ngModel)]="Register.Department" ></p-dropdown>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6">
+                                    <div class="field ">
+                                        <label class="lableshow" for="phone">Phone No:</label>
+                                        <input pInputText id="phone" type="tel" [(ngModel)]="Register.PhoneNumber" />
+                                    </div>
+                                </div>    
+                                <div class="col-md-6">      
+                                    <div class="field ">
+                                        <label class="lableshow" for="apt">Address:</label>
+                                        <input pInputText id="apt" rows="4" [(ngModel)]="Register.Address" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">      
+                                    <div class="field ">
+                                        <label class="lableshow" for="address">Suite/Unit/Apt #:</label>
+                                        <input pInputText id="address" rows="4" [(ngModel)]="Register.Apartment" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">      
+                                    <div class="field ">
+                                        <label class="lableshow" for="city">City:</label>
+                                        <input pInputText id="city" rows="4" [(ngModel)]="Register.City" [readonly]="true" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">      
+                                    <div class="field ">
+                                        <label class="lableshow" for="state">State:</label>
+                                        <input pInputText id="state" rows="4" [(ngModel)]="Register.State" [readonly]="true" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">      
+                                    <div class="field ">
+                                        <label class="lableshow" for="state">Zip:</label>
+                                        <input pInputText id="zip" rows="4" [(ngModel)]="Register.Zip" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <div class="card-footer" style="text-align: center;">
+                <button pButton pRipple label="Submit" class="p-3 text-xl" (click)="onRegister()"></button> &nbsp;
+                <button pButton pRipple label="Close" class="p-3 text-xl" style=" background-color: rgb(122, 121, 119);" 
+                     (click)="close()"></button>
+            </div>
+        </div>       
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Window Example</title>
+  <style>
+    /* Style for the popup */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="openPopupButton">Open Popup</button>
+
+  <!-- Popup container -->
+  <div id="popup">
+    <p>This is a popup window.</p>
+    <button id="closePopupButton">Close</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get references to the buttons and the popup
+      var openButton = document.getElementById('openPopupButton');
+      var closeButton = document.getElementById('closePopupButton');
+      var popup = document.getElementById('popup');
+
+      // Event listener for opening the popup
+      openButton.addEventListener('click', function() {
+        popup.style.display = 'block';
+      });
+
+      // Event listener for closing the popup
+      closeButton.addEventListener('click', function() {
+        popup.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

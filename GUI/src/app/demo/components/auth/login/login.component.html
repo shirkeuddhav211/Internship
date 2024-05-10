@@ -1,0 +1,230 @@
+<!-- <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="flex flex-column align-items-center justify-content-center">
+                      
+        <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+            <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <img src="assets/layout/images/BuenaPark.png" alt="Buena logo" class="mb-5 w-16rem flex-shrink-0">  
+                    
+                    <div class="text-900 text-3xl font-medium mb-3">Login</div>
+                   
+                </div>
+               
+                    <div>
+                        <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
+                        <input id="email1" type="text" placeholder="Email address" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" [(ngModel)]="login.username">
+    
+                        <label for="password1" class="block text-900 font-medium text-xl mb-2">Password</label>
+                        <p-password id="password1" [(ngModel)]="login.password" placeholder="Password" [toggleMask]="true" styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem"></p-password>
+    
+                        <div class="flex align-items-center justify-content-between mb-5 gap-5">
+                            <div class="flex align-items-center">
+                                <p-checkbox id="rememberme1"  styleClass="mr-2" [(ngModel)]="login.rememberme"></p-checkbox>
+                                
+                                <label for="rememberme1">Remember me</label>
+                            </div>
+                            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Forgot password?</a>
+                        </div>
+                        <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="onSubmit()"></button>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<style>
+    .main{
+        
+    font-family: Segoe UI, Helvetica, Arial, sans-serif;
+    color: #444444;
+    width: 100%;
+    height: 100%;
+    background-color: #eae3da;
+    }
+
+
+    .banner {
+    background-color: #eae3da;
+    background-image: url(https://its.cforms.net/Content/themes/Buena/images/BuenaPark.png);
+    background-repeat: no-repeat;
+    background-size: contain; /* This ensures the entire image fits within the container */
+    background-position : center top;
+    width: 100%;
+    height: 2cm;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+    .wapper{
+        /* background-color: #bbb9b6;
+        margin-left: 8.5cm;
+    border-radius: 56px;
+    padding: 0.3rem;
+    width: 90%; */
+    width: 90%;
+    display: block;
+    text-align: center;
+    vertical-align: top;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 15px;
+    border-color: #C3C0BD;
+    border-style: solid;
+    background-color: #ffffff;
+    }
+</style>
+<!-- <div class="main">
+    <div class="banner">
+
+    </div>
+    <div class="wapper">
+        <div class=" card">
+            <div class="grid">
+                <div class="col-12">
+                    <div class="card">
+                        
+                       
+                        <div class="grid">
+                            <div class="col-5 flex align-items-center justify-content-center">
+                               
+                                <div class="p-fluid">
+                                    <div class="field">
+                                        <h5>Login</h5>
+                                    </div>
+                                    <div class="field">
+                                        <label for="username">Username(Email)</label>
+                                        <input pInputText id="username" type="text" [(ngModel)]="login.username"/>
+                                    </div>
+                                    <div class="field">
+                                        <label for="password">Password</label>
+                                        <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>
+                                    </div>
+                                    <div class="field" style="float: left;">
+                                        <p-checkbox id="rememberme1"  styleClass="mr-2" [(ngModel)]="login.rememberme"></p-checkbox>                                         
+                                        <label for="rememberme1">Remember me</label>
+                                    </div>
+                                    <div class="field">
+                                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--secondary-color)">Forgot password?</a>
+                                    </div>
+                                   
+                                    <p-button label="Login" class="mt-2"  (click)="onSubmit()"></p-button>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                               
+                            </div>
+                            <div class="col-5 align-items-center justify-content-center">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <label >
+                        <div style="color: #272624; font-size: 16px;">**NOTICE:</div>
+                         Due to the COVID-19 pandemic, for your safety and the safety of our inspection personnel, all inspections will be done with all parties utilizing the proper personal protection equipment (masks) while maintaining the recommended social distancing requirement of six feet. We appreciate your patience and cooperation during these difficult times.**
+    
+                    </label>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+
+</div> -->
+
+<!-- <div class="grid p-fluid"> 
+    <div class="col-12">
+        <div class="card">
+            
+            <div class="flex justify-content-center">
+                <p-image src="assets/layout/images/NationalCity-image1.png" alt="Image" height="630px" ></p-image>
+            
+               
+        </div>
+        </div>
+    </div>
+</div>
+
+<p-dialog [(visible)]="display" [closable]="false"  [style]="{width: '30vw'}" [breakpoints]="{'960px': '75vw'}">
+    <p-header >
+        Inspection Tracking System
+      </p-header>
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-12 md:col-12">
+            <label for="username">Username(Email)</label>
+            <input pInputText id="username" type="text" [(ngModel)]="login.username"/>
+        </div>
+    </div>
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-12 md:col-12">
+            <label for="password">Password</label>
+            <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>                              
+        </div>                            
+    </div>
+    <div class="card-footer" style="text-align: center;">
+        
+        <p-button label="Login" class="mt-2"  (click)="onSubmit()"></p-button>
+    </div>
+    
+</p-dialog> -->
+
+
+<div class="login-screen">  
+    <div class="p-fluid p-formgrid grid">
+        
+        <div class="col-md-4"> </div>
+        <div class="col-md-4" style="padding-top: 100px;">           
+            <div style="background-color: white; width: 100%; border: 15px solid white;  
+                 margin: 20px;">  
+                <div style="background-color: #0068a3; padding-top: 10px; padding-bottom: 5px;">
+                    <h4 style=" color: white; text-align: center;">Inspection Tracking System</h4>
+                </div>              
+                <div style="padding: 10px;">
+                    <div class="col-md-12" style="font-weight: bold;text-align: center; ">Welcome!</div>
+                    <div class="p-fluid p-formgrid grid">
+                        <div class="field col-12 md:col-12">
+                            <label for="username">Email</label>
+                            <input pInputText id="username" type="text" [(ngModel)]="login.username"/>
+                        </div>
+                    </div>
+                    <div class="p-fluid p-formgrid grid" *ngIf="!isForgotPassword">
+                        <div class="field col-12 md:col-12">
+                            <label for="password">Password</label>
+                            <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>                              
+                        </div>                            
+                    </div>
+                </div>
+                 
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="forgotPassword()"
+                        style="color: var(--secondary-color)">Forgot password?</a>
+                                                                  
+                    </div>  
+                    <div class="field col-12 md:col-4"></div>   
+                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
+                        <p-button label="Login" class="mt-2"  (click)="onSubmit()"></p-button>
+                    </div>  
+                    <div class="field col-12 md:col-4" *ngIf="isForgotPassword">
+                        <p-button label="Submit" class="mt-2"  (click)="onSubmit()"></p-button>
+                    </div>                    
+                </div> 
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12 md:col-4">
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="residentsignup()"
+                        style="color: var(--secondary-color)">Register Account</a>
+                    </div> 
+                </div>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>         
+            </div>
+        </div>
+        <div class="col-md-4"> </div>   
+    </div>
+    
+   
+</div>

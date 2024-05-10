@@ -1,0 +1,30 @@
+@media screen and (min-width: 768px) {
+    .checkboxsize{
+        margin-top: 10px;
+        margin-left: 2px;
+        margin-right: 10px;
+    }
+    .setview{
+        text-align: end;
+    }
+    .setbutton{
+        float: right;
+    }
+    .texta{
+        text-align: end;
+      }
+}
+@media screen and (max-width: 991px)  {
+    .viewcheckbox{
+        margin-left: 5px;
+    }
+    .viewlabel{
+        margin-top: 3px;
+    }
+    .textab{
+        text-align: center;
+      }
+      .show{
+        display: block;
+      }
+}

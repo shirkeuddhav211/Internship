@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: $scale;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--text-color);
+    background-color: var(--surface-ground);
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.layout-wrapper {
+    min-height: 100vh;
+}
+
+:host ::ng-deep .ui-dialog .ui-dialog-titlebar {
+    background-color: red;
+}
+
+.login-screen {
+    background-image: url("/assets/layout/images/NationalCity-image1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 100vh;
+
+}
+
+.required {
+    border-left: 5px solid #a94442;
+}
+
+.showrequired {
+    display: block;
+}
+
+.lableshow {
+    margin-bottom: 0 !important;
+}
+
+.p-dropdown-items {
+    padding-left: 10px !important;
+    left:-37px !important
+}
+
+html {
+    // font-size: 0.625rem;
+    font-size: 12px;
+    color: #000000;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+.p-dropdown .p-dropdown-label{
+    width: 100px !important;
+  }
+
+.p-datatable-header {
+    padding-top: 0 !important;
+}

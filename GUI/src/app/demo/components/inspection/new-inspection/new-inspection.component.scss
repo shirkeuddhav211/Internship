@@ -1,0 +1,24 @@
+@media (min-width: 768px){
+    .texta{
+      text-align: end;
+    }
+}
+@media screen and (max-width: 991px) {
+  .textab{
+    text-align: center;
+  }
+  .show{
+    display: block;
+  }
+}
+
+.p-ripple p-element p-button p-component p-highlight ng-star-inserted{
+  background-color: #0068a3;
+}
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+.hide {
+  display: none;
+}

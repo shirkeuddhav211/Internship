@@ -1,0 +1,307 @@
+
+
+
+
+<div class="grid">
+    <div class="col-12">
+        <div class="card ">
+            <h4 style="font-size: 25px;font-weight: bold">Registration Form</h4>
+            <div class="card-body" style="padding: 2px !important;">
+                <div class="col-12">
+                    <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label class="lableshow" htmlFor="firstname2">First Name</label>
+                                <input pInputText id="firstname2" type="text" [(ngModel)]="Register.FirstName" required/>
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label class="lableshow" htmlFor="lastname2">Last Name</label>
+                        <input pInputText id="lastname2" type="text" [(ngModel)]="Register.LastName" required/>
+                    </div>
+                    
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label  class="lableshow"htmlFor="email2">Email</label>
+                        <input pInputText id="email2" type="email" [(ngModel)]="Register.Email" (change)="onEmailChange(Register.Email)" required/>
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label class="lableshow" htmlFor="firstname2">User Name</label>
+                        <input pInputText id="firstname2" type="text" [(ngModel)]="Register.Email" (onChange)="test()" [readOnly]="true" required/>
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="!isEditUser">
+                        <label  class="lableshow" htmlFor="lastname2">Password</label>
+                        <input pInputText id="password" type="password" [(ngModel)]="Register.Password" />
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="!isEditUser">
+                        <label class="lableshow" htmlFor="email2">Confirm Password</label>
+                        <input pInputText id="confirmpassword" type="password" [(ngModel)]="Register.Password" />
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="isEditUser">
+                        <label class="lableshow" htmlFor="lastname2">Password</label>
+                        <input pInputText id="password" type="password" [(ngModel)]="Register.newPassword" />
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="isEditUser">
+                        <label class="lableshow" htmlFor="email2">Confirm Password</label>
+                        <input pInputText id="confirmpassword" type="password" [(ngModel)]="Register.newPassword" />
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="!isResident">
+                        <label class="lableshow" for="role">Role:</label>
+                        <p-dropdown [options]="roleList" optionLabel="Name" optionValue="Name" [(ngModel)]="Register.RoleName" ></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding" *ngIf="!isResident">
+                        <label class="lableshow" for="department">Department:</label>
+                        <p-dropdown [options]="deparments" optionLabel="name" optionValue="name" [(ngModel)]="Register.Department" ></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label class="lableshow" for="phone">Phone No:</label>
+                        <input pInputText id="phone" type="tel" [(ngModel)]="Register.PhoneNumber" />
+                    </div>
+                    <div class="field col-12 md:col-4 allpadding">
+                        <label class="lableshow" for="apt">Suite/Unit/Apt #:</label>
+                        <input pInputText id="apt" type="text" [(ngModel)]="Register.Apartment" />
+                    </div>
+                    <div class="field col-4 allpadding">
+                        <label class="lableshow" for="address">Address:</label>
+                        <input pInputText id="address" rows="4" [(ngModel)]="Register.Address" />
+                    </div>
+
+                    <div class="field col-4 allpadding">
+                        <label class="lableshow" for="city">City:</label>
+                        <input pInputText id="city"  [(ngModel)]="Register.City" [readonly]="true"/>
+                    </div>
+
+                    <div class="field col-4 allpadding">
+                        <label class="lableshow" for="state">State:</label>
+                        <input pInputText id="state"  [(ngModel)]="Register.State" [readonly]="true"/>
+                    </div>
+                    <div class="field col-4 allpadding">
+                        <label class="lableshow" for="state">Zip:</label>
+                        <input pInputText id="zip"  [(ngModel)]="Register.Zip" />
+                    </div>
+                    <!-- <div class="col-12 md:col-6">
+                        <div class="card p-fluid">
+                            <h5 style="text-align: center; padding-bottom: 10px;">User info</h5>
+                            <div class="field">
+                                <label htmlFor="firstname2">Firstname</label>
+                                <input pInputText id="firstname2" type="text" [(ngModel)]="Register.FirstName" required/>
+                            </div>
+                            <div class="field">
+                                <label htmlFor="lastname2">Lastname</label>
+                                <input pInputText id="lastname2" type="text" [(ngModel)]="Register.LastName" required/>
+                            </div>
+                            <div class="field">
+                                <label htmlFor="email2">Email</label>
+                                <input pInputText id="email2" type="email" [(ngModel)]="Register.Email" (change)="onEmailChange(Register.Email)" required/>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Credentials -->
+
+                    <!-- <div class="col-12 md:col-6">
+                        <div class="card p-fluid">
+                            <h5 style="text-align: center; padding-bottom: 10px;">Credentials</h5>
+                            <div class="field">
+                                <label htmlFor="firstname2">UserName</label>
+                                <input pInputText id="firstname2" type="text" [(ngModel)]="Register.UserName" (onChange)="test()" required/>
+                            </div>
+                            <div class="field" *ngIf="!isEditUser">
+                                <label htmlFor="lastname2">Password</label>
+                                <input pInputText id="password" type="password" [(ngModel)]="Register.Password" />
+                            </div>
+                            <div class="field" *ngIf="isEditUser">
+                                <label htmlFor="lastname2">Password</label>
+                                <input pInputText id="password" type="password" [(ngModel)]="Register.newPassword" />
+                            </div>
+                            <div class="field" *ngIf="!isEditUser">
+                                <label htmlFor="email2">Confirm Password</label>
+                                <input pInputText id="confirmpassword" type="password" [(ngModel)]="Register.Password" />
+                            </div>
+                            <div class="field"*ngIf="isEditUser">
+                                <label htmlFor="email2">Confirm Password</label>
+                                <input pInputText id="confirmpassword" type="password" [(ngModel)]="Register.newPassword" />
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Additional Card -->
+
+
+                    <!-- <div class="col-12">
+                        <div class="card">
+                            <h5 style="text-align: center; padding-bottom: 10px;">Contacts and Others</h5>
+                            <div class="p-fluid p-formgrid grid">
+                                
+
+                                <div class="field col-12 md:col-6">
+                                    <label for="role">Role:</label>
+                                    <p-dropdown [options]="roleList" optionLabel="Name" optionValue="Name" [(ngModel)]="Register.RoleName" ></p-dropdown>
+                                </div>
+                                <div class="field col-12 md:col-3">
+                                    <label for="department">Department:</label>
+                                    <p-dropdown [options]="deparments" optionLabel="name" optionValue="name" [(ngModel)]="Register.Department" ></p-dropdown>
+                                </div>
+                                <div class="field col-12 md:col-3">
+                                    <label for="phone">Phone No:</label>
+                                    <input pInputText id="phone" type="tel" [(ngModel)]="Register.PhoneNumber" />
+                                </div>
+                            
+                                <div class="field col-12">
+                                    <label for="address">Address:</label>
+                                    <input pInputText id="address" rows="4" [(ngModel)]="Register.Address" />
+                                </div>
+                                                        
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>   
+                </div>
+            </div>
+            <div class="card-footer" style="text-align: center;">
+                <button pButton pRipple label="Submit"  class="p-3 text-xl"  (click)="onRegister()"></button> &nbsp;
+                <button pButton pRipple label="Close" class="p-3 text-xl" style=" background-color: rgb(122, 121, 119);"  (click)="close()"></button>
+            </div>
+        </div>       
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- 
+<div class="grid">
+    <div class="col-12">
+		<div class="card">
+			<h2 style="padding-top: 0%;
+            padding-bottom: 15px;
+          text-align: center;
+          color: #333;" >Registration Form</h2>
+          <div class="card-body">
+
+				<div class="field col-12 md:col-6">
+					<label htmlFor="firstname2">Firstname</label>
+					<input pInputText id="firstname2" type="text" [(ngModel)]="Register.firstname" required/>
+				</div>
+				<div class="field col-12 md:col-6">
+					<label htmlFor="lastname2">Lastname</label>
+					<input pInputText id="lastname2" type="text" [(ngModel)]="Register.lastname" required/>
+				</div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="firstname2">Username</label>
+                    <input pInputText id="firstname2" type="text" [(ngModel)]="Register.username" required/>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="firstname2">Email</label>
+                    <input pInputText id="firstname2" type="email" [(ngModel)]="Register.email" required/>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="lastname2">Password</label>
+                    <input pInputText id="lastname2" type="password" [(ngModel)]="Register.password" required/>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label htmlFor="lastname2">Confirm Password :</label>
+                    <input pInputText id="conformpassword" type="password" [(ngModel)]="Register.repassword"  required/>
+                </div>	
+				<div class="field col-12 md:col-6">
+					<label htmlFor="city">Phone No :</label>
+					<input pInputText id="phone" type="tel" [(ngModel)]="Register.phone"  required/>
+				</div>
+				<div class="field col-12 md:col-3">
+					<label htmlFor="state">Department : </label>
+					<p-dropdown [options]="deparments" optionLabel="name" [(ngModel)]="Register.department"  required></p-dropdown>
+				</div>
+				<div class="field col-12 md:col-3">
+					<label htmlFor="Role">Role : </label>
+					<p-dropdown [options]="role" optionLabel="name" [(ngModel)]="Register.role"  required></p-dropdown>
+				</div>
+                <div class="field col-12">
+					<label htmlFor="address">Address</label>
+					<input pInputText id="address" rows="4"[(ngModel)]="Register.address" required/>
+				</div>
+
+			</div>
+          </div>
+         
+	</div>
+   
+
+
+    <div class="card-footer" style="text-align: center;">
+        <button pButton pRipple label="Submit" class="p-3 text-xl" [routerLink]="['/app']"></button>
+    </div>
+        
+       <div class="p-fluid p-formgrid grid">
+            <div class="field col-12 md:col-6">
+                <label htmlFor="firstname2">Firstname</label>
+                <input pInputText id="firstname2" type="text" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="lastname2">Lastname</label>
+                <input pInputText id="lastname2" type="text" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="firstname2">Username</label>
+                <input pInputText id="firstname2" type="text" />
+            </div>
+
+            <div class="field col-12 md:col-6">
+                <label htmlFor="firstname2">Email</label>
+                <input pInputText id="firstname2" type="email" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="lastname2">Password</label>
+                <input pInputText id="lastname2" type="password" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="lastname2">Conform Password</label>
+                <input pInputText id="conformpassword" type="password" />
+            </div>
+            <div class="field col-12">
+                <label htmlFor="address">Address</label>
+                <input pInputText id="address" rows="4" />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label for="department">Department:</label>
+                <select pInput id="department" name="department" >
+                  <option value="" disabled>Select Department</option>
+                  <option value=0>HR</option>
+                  <option value=1>Software</option>
+                  <option value=2>Hardware</option>
+                  
+                
+                </select>
+               
+            </div>
+            <div class="field col-12 md:col-6">
+                <label for="department">Department:</label>
+                <select pInput id="department" name="department" style="height: 2.25rem; width:5cm;">
+                   
+                </select>
+            </div>
+            <div class="field col-12 md:col-6">
+                <label for="phone">Phone No:</label>
+                <input pInput type="tel" id="phone" name="phone"required>
+            </div>
+           
+            <div class="field col-12 md:col-6">
+                <label htmlFor="state">State 1234</label>
+                <p-dropdown [options]="dropdowntems" optionLabel="State" [(ngModel)]="selectedState"></p-dropdown>
+            </div>
+
+            <div class="field col-12 md:col-3">
+            <h5>Dropdown</h5>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Roles" [showClear]="true"></p-dropdown>
+            </div>
+
+            <div class="field col-12 md:col-6">
+                <label htmlFor="zip">Zip</label>
+                <input pInputText id="zip" type="text" />
+            </div>
+        </div> -->
+        <!-- <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" [routerLink]="['/app']"></button> -->
+   
+ <!-- </div> 
+   -->
+
+ 

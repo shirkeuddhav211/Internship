@@ -1,0 +1,26 @@
+<div class="topcontainer">
+    <div class="main">
+      <input type="checkbox" id="chk" aria-hidden="true">
+      <div class="signup">
+        <form >
+          <label for="'chk" aria-hidden="true">Sign up</label>
+          <input type="text" name="txt" placeholder="UserName" [(ngModel)]="Resitermodel.userName">
+          <input type="email" name="email" placeholder="Email" [(ngModel)]="Resitermodel.email">
+          <input type="password" name="pswd" placeholder="Password" [(ngModel)]="Resitermodel.password">
+          <button (click)="SubmitRegister()"> Register </button>
+          <!-- (click)="onSignUp()" -->
+        </form>
+      </div>
+      <div class="login">
+        <form >
+          <label for="chk" aria-hidden="true">Login</label>
+          <input type="txt" name="userName" placeholder="UserName" [(ngModel)]="loginmodel.userName">
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="loginmodel.password">
+          <button  (click)="SubmitLogin()" >Login</button>
+          <!-- (click)="onLogin()" -->
+        </form>
+      </div>
+      <div class="login"></div>
+    </div>
+  </div>
+  <!-- routerLink="/app" -->

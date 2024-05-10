@@ -1,0 +1,531 @@
+<!-- <Style>
+  
+    p-dropdown{
+        height: 1cm;
+        
+    }
+    .l1{
+        padding-left: 1cm;
+        
+    }
+    .l2{
+        padding-left: 0.5cm;
+    }
+    /* input{
+        width: 7cm;    
+    } */
+    .ml{
+        margin-left: 2cm;
+    }
+</Style> -->
+<!-- <div class="grid" >
+    <div class="container" >
+        <h2 > Inspection Information</h2>
+        <div class="card" > -->
+        
+            <!-- <fieldset>
+                <h2 style="text-align: center;"> Inspection form</h2>
+                    <div class="row">
+                        <div class="col-md-12"  >
+                            <div class="row ">
+                                <div class="col-md-4" style="background-color: rgb(250, 253, 253); border-radius: 20px;">
+                                   
+                                    <Label style="padding-top: 1cm;">FirstName : </Label><br>
+                                    <input pInputText  id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.FirstName" required /><br><br>
+                                 
+                                    <Label>LastName : </Label><br>
+                                    <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.LastName"  required/><br><br>
+    
+                                    <Label>Address Line 1 : </Label><br>
+                                    <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.AddressLine1" required/><br><br>
+     
+                                    <Label>Suite/Unit/Apt# : </Label><br>
+                                    <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.AddressLine2" required/><br><br>
+    
+                                    <Label>State : </Label><br>
+                                    <p-dropdown [options]="role" optionLabel="name" required style="height: 2cm; width: 7cm;" [(ngModel)] = "inspectionInfo.State"></p-dropdown><br><br>
+    
+                                    <Label>City : </Label><br>
+                                    <p-dropdown [options]="role" optionLabel="name"  [(ngModel)] = "inspectionInfo.City" required  ></p-dropdown><br><br>
+    
+                                    <Label>Phone : </Label><br>
+                                    <input pInputText id="username" type="number" Style="height: 1cm; width: 7cm;" [(ngModel)] = "inspectionInfo.PhoneNumber" required/><br><br>
+    
+                                    <Label>Email : </Label><br>
+                                    <input pInputText id="username" type="email" Style="height: 1cm; width: 7cm;" [(ngModel)] = "inspectionInfo.Email"  required/><br><br>
+    
+                                    <Label>Date : </Label><br>
+                                    <input type="date" id="date" name="date" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.InspectionDate"><br><br>
+    
+                                    
+                                    
+    
+                                    <Label style="margin-right: 1cm;">Time : </Label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="AM" id="AM" (click)="checkStatus('am')" value="AM" [(ngModel)] = "inspectionInfo.AmPm">
+                                        <label class="form-check-label" for="AM" >AM</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="PM" id="PM" (click)="checkStatus('pm')" value="PM" [(ngModel)] = "inspectionInfo.AmPm">
+                                        <label class="form-check-label" for="PM">PM</label>
+                                      </div>
+                                   
+                                </div>
+                                <div class="col-md-5" style="background-color: rgb(250, 253, 253); border-radius: 20px;">                                   
+                                    <Label class="l1" style="padding-top: 1cm;">Inspector : </Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <p-dropdown [options]="userList" optionLabel="FirstName" required style="height: 2cm;  width: 10cm;" optionValue="Id" [(ngModel)] = "inspectionInfo.ResidentUserId" ></p-dropdown><br><br>
+    
+                                    <Label class="l1">Inspection Type 1 : </Label>
+                                    <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                                    [(ngModel)]="inspectionInfo.InspectionType1"  required  >  </p-dropdown><br><br>
+                                    <Label class="l1">Inspection Type 2 :</Label>
+                                    <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                                    [(ngModel)] = "inspectionInfo.InspectionType2" required style="height: 2cm; margin-left: 0.5cm;"></p-dropdown><br><br>
+    
+                                    <Label class="l1">Inspection Type 3 :</Label>
+                                    <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                                    [(ngModel)] = "inspectionInfo.InspectionType3" required style="margin-left: 0.5cm;"></p-dropdown><br><br>
+                                   
+                                    <Label class="l1">Inspection Type 4 :</Label>
+                                    <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                                     [(ngModel)] = "inspectionInfo.InspectionType4"required style="height: 2cm; margin-left: 0.5cm;"></p-dropdown><br><br>
+                                    
+                                     
+                
+                                    <Label class="l1">Permit :</Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input pInputText id="username" type="email"  Style="height: 1cm; " [(ngModel)] = "inspectionInfo.PermitNo" required/><br><br>
+    
+                                    <Label  class="l1">Comments :</Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <textarea style="margin-left: 1cm;" rows="5" cols="30" [(ngModel)] = "inspectionInfo.Comments" placeholder="Your Message" pInputTextarea></textarea>
+    
+                                    <br><br>
+                                    <Label  style="margin-left: 1cm; margin-right: 1cm;">Inspection for : </Label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Commercial" (click)="checkType('typenew')" id="Commercial" value="Commercial" [(ngModel)] = "inspectionInfo.Type">
+                                        <label class="form-check-label" for="Commercial">Commercial</label>
+                                      </div>
+                                      <br>
+                                      <div class="form-check form-check-inline" style="margin-left: 168px;">
+                                        <input class="form-check-input" type="radio" name="Residential"  (click)="checkType('typenew')"id="Residential" value="Residential" [(ngModel)] = "inspectionInfo.Type">
+                                        <label class="form-check-label" for="Residential">Residential</label>
+                                      </div>
+
+                                     <div style="border:1px solid; border-radius: 1px; padding:0.5cm; padding-left: 2cm; margin-top: 2cm; margin-left: 1cm;">
+                                        <Label >AM = 8:30 am to 11:30 am<br>
+                                            PM = 1:30 pm to 4:30 pm
+                                     </Label>
+                                     </div>
+                                    
+                                </div>
+                                
+                                <div class="col-md-3" style="background-color: rgb(250, 253, 253); border-radius: 20px;">
+                                    
+                                    <Label class="l2" style="margin-top: 1cm; padding-top: 1cm;">Status :</Label>
+                                    <p-dropdown [options]="status" optionLabel="name" optionValue="name" 
+                                    [(ngModel)] = "inspectionInfo.Status1" required style="margin-left: 0.5cm;"></p-dropdown><br><br>
+                                    <Label class="l2">Status :</Label>
+                                    <p-dropdown [options]="status" optionLabel="name" optionValue="name"
+                                     [(ngModel)] = "inspectionInfo.Status2" required style="height: 2cm; margin-left: 0.5cm;"></p-dropdown><br><br>
+    
+                                    <Label class="l2">Status :</Label>
+                                    <p-dropdown [options]="status" optionLabel="name" optionValue="name" style="margin-left: 0.5cm;"  
+                                    [(ngModel)] = "inspectionInfo.Status3"required></p-dropdown><br><br>
+                                    <Label class="l2"> Status :</Label>
+                                    <p-dropdown [options]="status" optionLabel="name" optionValue="name"
+                                    [(ngModel)] = "inspectionInfo.Status4" required style="height: 2cm; margin-left: 0.5cm;"></p-dropdown><br><br>
+    
+                                    <button class="l2" pButton pRipple label="Save" type="submit" style="border-radius: 20px; margin-left: 1cm; margin-top:8.5cm; width: 4cm; height: 1cm;" class="p-3 text-xl" (click)="onSubmit()"></button>
+                                     <br>
+                                    <button pButton pRipple label="Back to List"  style="border-radius: 20px; margin-top: 1cm; margin-left: 1cm; width: 4cm; height: 1cm; background-color: rgb(122, 121, 119);" class="p-3 text-xl" ></button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                
+            </fieldset> -->
+
+           
+        <!-- <div class="row">
+            <div class="col-md-4">
+                <h5>LOCATION</h5>
+            </div>
+            <div class="col-md-4">
+                <h5>INSPECTION</h5>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-md-4">
+                <Label >FirstName : </Label><br>
+                <input pInputText  id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.FirstName" required /><br><br>
+             
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style=" padding-left: 0;">Inspector : </Label><br>
+                <p-dropdown [options]="userList" optionLabel="Name" required style="width: 80%; display: grid;" optionValue="Id" [(ngModel)] = "inspectionInfo.ResidentUserId" ></p-dropdown><br><br>
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>LastName : </Label><br>
+                <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.LastName"  required/><br><br>
+    
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Inspection Type 1 : </Label><br>
+                <p-dropdown [options]="inspectiontypes" style="width: 80%; display: grid;" optionLabel="InspectionTypeName"
+                 optionValue="InspectionTypeName" [(ngModel)]="inspectionInfo.InspectionType1"  required  >  </p-dropdown><br><br>
+                                    
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Status :</Label><br>
+                <p-dropdown [options]="status" style="width: 80%; display: grid;" optionLabel="name" 
+                optionValue="name" [(ngModel)] = "inspectionInfo.Status1" required ></p-dropdown><br><br>
+                                    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>Address Line 1 : </Label><br>
+               <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.AddressLine1" required/><br><br>
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Inspection Type 2 : </Label><br>
+                <p-dropdown [options]="inspectiontypes" style="width: 80%; display: grid;" 
+                optionLabel="InspectionTypeName" optionValue="InspectionTypeName" [(ngModel)]="inspectionInfo.InspectionType2"  required  >  </p-dropdown><br><br>
+                
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Status :</Label><br>
+                <p-dropdown [options]="status" style="width: 80%; display: grid;" optionLabel="name"
+                 optionValue="name" [(ngModel)] = "inspectionInfo.Status2" required ></p-dropdown><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>Suite/Unit/Apt# : </Label><br>
+                <input pInputText id="username" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.AddressLine2" required/><br><br>
+    
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Inspection Type 3 : </Label><br>
+                <p-dropdown [options]="inspectiontypes" style="width: 80%; display: grid;"
+                 optionLabel="InspectionTypeName" optionValue="InspectionTypeName" [(ngModel)]="inspectionInfo.InspectionType3"  required  >  </p-dropdown><br><br>
+                
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Status :</Label><br>
+                <p-dropdown [options]="status" style="width: 80%; display: grid;" optionLabel="name" optionValue="name" [(ngModel)] = "inspectionInfo.Status3" required ></p-dropdown><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>City : </Label><br>
+               <input pInputText id="State" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.City" required/>
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Inspection Type 4 : </Label><br>
+                <p-dropdown [options]="inspectiontypes" style="width: 80%; display: grid;" optionLabel="InspectionTypeName" 
+                optionValue="InspectionTypeName" [(ngModel)]="inspectionInfo.InspectionType4"  required  >  </p-dropdown>
+                
+            </div>
+            <div class="col-md-4">
+                <Label class="l1" style="padding-left: 0;">Status :</Label><br>
+                <p-dropdown [options]="status" style="width: 80%; display: grid;" optionLabel="name" optionValue="name" 
+                [(ngModel)] = "inspectionInfo.Status4" required ></p-dropdown>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>State : </Label><br>
+               <input pInputText id="State" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.State" required/><br><br>
+            </div>
+            <div class="col-md-4">
+                <Label>Permit# : </Label><br>
+               <input pInputText id="State" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.PermitNo" required/><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>Phone : </Label><br>
+               <input pInputText id="Phone" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.PhoneNumber" required/><br><br>
+            </div>
+            <div class="col-md-4">
+                <Label>Comments : </Label><br>
+               
+                <textarea rows="4" cols="30" [(ngModel)] = "inspectionInfo.Comments" pInputTextarea></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>Email : </Label><br>
+               <input pInputText id="Email" type="text" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.Email" required/><br><br>
+            </div>
+            <div class="col-md-4">
+                <Label>Date : </Label><br>
+                <input type="date" id="date" name="date" Style="height: 1cm; width: 7cm;  " [(ngModel)] = "inspectionInfo.InspectionDate"><br><br>    
+              
+            </div>
+            <div class="col-md-4">
+                <Label>Inspection For : </Label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Commercial" (click)="checkType('typenew')" id="Commercial" value="Commercial" [(ngModel)] = "inspectionInfo.Type">
+                    <label class="form-check-label" for="Commercial">Commercial</label>                    
+                </div>
+                 
+                <div class="form-check form-check-inline" >
+                    <input class="form-check-input" type="radio" name="Residential"  (click)="checkType('typenew')"id="Residential" value="Residential" [(ngModel)] = "inspectionInfo.Type">
+                    <label class="form-check-label" for="Residential">Residential</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Label>Time:</Label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="AM" id="AM" (click)="checkStatus('am')" value="AM" [(ngModel)] = "inspectionInfo.AmPm">
+                    <label class="form-check-label" for="AM" >AM</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="PM" id="PM" (click)="checkStatus('pm')" value="PM" [(ngModel)] = "inspectionInfo.AmPm">
+                    <label class="form-check-label" for="PM">PM</label>
+                </div>
+            </div>
+            <div class="col-md-4" style="border:1px solid; border-radius: 1px; padding:0.5cm; ">
+                <Label >AM = 8:30 am to 11:30 am<br>
+                        PM = 1:30 pm to 4:30 pm
+                </Label>                 
+            </div>
+            <div class="col-md-4">
+                <button class="l2" pButton pRipple label="Save" type="submit" style="border-radius: 20px; margin-left: 1cm; width: 4cm; height: 1cm;" class="p-3 text-xl" 
+                (click)="onSubmit()"></button>
+                <br>
+               <button pButton pRipple label="Back to List"  
+               style="border-radius: 20px;  margin-top: 1cm;  margin-left: 1cm; width: 4cm; height: 1cm; background-color: rgb(122, 121, 119);"
+                class="p-3 text-xl" (click)="close()"></button>
+            </div>
+        </div> -->
+   
+
+    <!-- </div>
+    </div>
+</div> -->
+
+<div class="grid">
+    <div class="col-12">
+        <div class="card " >
+            <h4 style="font-size: 25px;font-weight: bold" >Inspection Form</h4>
+            <div class="card-body">
+                <div class="p-fluid p-formgrid grid gridpadding" >
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="l2" pButton pRipple label="User Information" style="width: 170px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
+                            ></button>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="p-fluid p-formgrid grid gridpadding">
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow" for="role">First Name:</label>
+                                <input  pInputText id="phone" type="text" [(ngModel)]="this.Register.FirstName" [readonly]="isResient" />
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow">Last Name:</label>
+                                <input pInputText id="phone" type="text" [(ngModel)]="this.Register.LastName" [readonly]="isResient" required/>
+                            </div> 
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow" >Address Line1:</label>
+                                <input pInputText id="phone" type="text" [(ngModel)]="this.Register.Address" [readonly]="isResient" required/>
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow">Suite/Unit/Apt #:</label>
+                                <input pInputText  type="text" [(ngModel)]="this.Register.Apartment"  [readonly]="isResient" />
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow" for="phone">City:</label>
+                                <input pInputText id="phone" type="tel" [(ngModel)]="this.Register.City" [readonly]="true" />
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow" >State:</label>
+                                <input pInputText  type="text" [(ngModel)]="this.Register.State" [readonly]="true" />
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow" >Phone:</label>
+                                <input pInputText  type="text" [(ngModel)]="this.Register.PhoneNumber" [readonly]="isResient" (keypress)="formatUserPhoneNumber()" maxlength="14" required/>
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow">Email:</label>
+                                <input pInputText  type="email" [(ngModel)]="this.Register.Email" [readonly]="isResient" />
+                            </div>
+                            <div class="field col-12 md:col-4 fieldpadding">
+                                <label class="lableshow">Zip:</label>
+                                <input pInputText  type="text" [(ngModel)]="this.Register.Zip" [readonly]="isResient" />
+                            </div>
+                        </div>
+
+                        
+                        
+                    </div>                    
+                </div>
+                <div class="p-fluid p-formgrid grid gridpadding">
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-4">
+                            <button class="l2" pButton pRipple label="Inspection Information" style="width: 200px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
+                            ></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding">  
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
+                            <label class="lableshow" for="role">Inspector:</label>
+                            <p-dropdown class="required showrequired" [options]="userList" optionLabel="Name" optionValue="Name" 
+                            [(ngModel)]="inspectionInfo.InspectorName" ></p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding">  
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label class="lableshow">Inspection Type1:</label>
+                            <p-dropdown class="required showrequired " [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            [(ngModel)]="inspectionInfo.InspectionType1" ></p-dropdown>
+                        </div>
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
+                            <label class="lableshow">Status:</label>
+                            <p-dropdown [options]="status" optionLabel="name" optionValue="name" 
+                            [(ngModel)]="inspectionInfo.Status1" ></p-dropdown>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding">  
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label class="lableshow">Inspection Type2:</label>
+                            <p-dropdown class="required showrequired" [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            [(ngModel)]="inspectionInfo.InspectionType2" ></p-dropdown>
+                        </div>                            
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
+                            <label class="lableshow">Status:</label>
+                            <p-dropdown [options]="status" optionLabel="name" optionValue="name" 
+                            [(ngModel)]="inspectionInfo.Status2" ></p-dropdown>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding"> 
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label class="lableshow">Inspection Type3:</label>
+                            <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            [(ngModel)]="inspectionInfo.InspectionType3" ></p-dropdown>
+                        </div>                            
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
+                            <label class="lableshow">Status:</label>
+                            <p-dropdown [options]="status" optionLabel="name" optionValue="name" 
+                            [(ngModel)]="inspectionInfo.Status3" ></p-dropdown>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding"> 
+                        <div class="field col-12 md:col-4 fieldpadding" >
+                            <label class="lableshow">Inspection Type4:</label>
+                            <input pInputText  type="text" [(ngModel)]="inspectionInfo.InspectionType4"  />
+                            <!-- <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            [(ngModel)]="inspectionInfo.InspectionType4" required></p-dropdown> -->
+                        </div>                            
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
+                            <label class="lableshow">Status:</label>
+                            <p-dropdown [options]="status" optionLabel="name" optionValue="name" 
+                            [(ngModel)]="inspectionInfo.Status4" ></p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding"> 
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label class="lableshow">Permit#:</label>
+                            <input class="required " pInputText  type="text" [(ngModel)]="inspectionInfo.PermitNo" required/>
+                        </div> 
+                        <div class="field col-12 md:col-3 fieldpadding">
+                            <label class="lableshow">Date:</label>                           
+                            <p-calendar class="required showrequired" [(ngModel)] = "inspectionInfo.InspectionDate" (click)="checkHoliday()"
+                             dateFormat="mm/dd/yy" [showIcon]="true">  </p-calendar>                             
+                        </div>
+                        <div class="field col-12 md:col-3 fieldpadding">
+                            <label class="lableshow">Inspection For : </label><br>
+                            <input class="form-check-input" type="radio" style="border-color: black;" name="Commercial" (click)="checkType('typenew')" 
+                                id="Commercial" value="Commercial" [(ngModel)] = "inspectionInfo.Type"> &nbsp;
+                            <label class="form-check-label" for="Commercial">Commercial</label> &nbsp;
+                            <input class="form-check-input" type="radio" style="border-color: black;" name="Residential"  (click)="checkType('typenew')"
+                                id="Residential" value="Residential" [(ngModel)] = "inspectionInfo.Type">&nbsp;
+                            <label class="form-check-label" for="Residential">Residential</label>                               
+                        </div> 
+                        <div class="field col-12 md:col-2 fieldpadding">
+                            <label class="lableshow">Time: </label><br>
+                            <input class="form-check-input" type="radio" style="border-color: black;" name="AM" id="AM" (click)="checkStatus('am')" value="AM"
+                                [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
+                            <label class="form-check-label" for="AM" >AM</label>&nbsp;
+                            <input class="form-check-input" type="radio" style="border-color: black;" name="PM" id="PM" (click)="checkStatus('pm')" value="PM"
+                                [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
+                            <label class="form-check-label" for="PM">PM</label>                             
+                        </div>
+                        <!-- <div class="field col-12 md:col-4 fieldpadding">
+                            <label>Comments:</label><br>
+                            <textarea rows="4" cols="40" [(ngModel)] = "inspectionInfo.Comments" pInputTextarea></textarea>                               
+                        </div>  -->
+                        
+                    </div>
+                </div>            
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding">
+                        <!-- <div class="field col-12 md:col-4 fieldpadding">
+                            <label>Inspection For : </label><br>
+                            <input class="form-check-input" type="radio" name="Commercial" (click)="checkType('typenew')" 
+                                id="Commercial" value="Commercial" [(ngModel)] = "inspectionInfo.Type"> &nbsp;
+                            <label class="form-check-label" for="Commercial">Commercial</label> &nbsp;
+                            <input class="form-check-input" type="radio" name="Residential"  (click)="checkType('typenew')"
+                                id="Residential" value="Residential" [(ngModel)] = "inspectionInfo.Type">&nbsp;
+                            <label class="form-check-label" for="Residential">Residential</label>                               
+                        </div> 
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label>Time: </label><br>
+                            <input class="form-check-input" type="radio" name="AM" id="AM" (click)="checkStatus('am')" value="AM"
+                                [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
+                            <label class="form-check-label" for="AM" >AM</label>&nbsp;
+                            <input class="form-check-input" type="radio" name="PM" id="PM" (click)="checkStatus('pm')" value="PM"
+                                [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
+                            <label class="form-check-label" for="PM">PM</label>                             
+                        </div>  -->
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <label class="lableshow">Comments:</label><br>
+                            <textarea rows="3" cols="25" style="height: 80px;" [(ngModel)] = "inspectionInfo.Comments" pInputTextarea></textarea>                               
+                        </div> 
+                        <div class="field col-12 md:col-4 fieldpadding" style="border:1px solid; border-radius: 5px; width: fit-content; height: fit-content; margin-top: 30px;">
+                            <Label >AM = 8:30 am to 11:30 am<br>
+                                PM = 1:30 pm to 4:30 pm
+                            </Label> 
+                        </div> 
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="p-fluid p-formgrid grid gridpadding">
+                        <div class="field col-12 md:col-4"></div>
+                        <div class="field col-12 md:col-4 fieldpadding">
+                            <button pButton pRipple label="Submit"  class="p-3 text-xl" style=" width: 4cm; 
+                                height: 1cm; " (click)="onSubmit()"></button>&nbsp;
+                            <button pButton pRipple label="Back to List" class="p-3 text-xl" style="  margin-top: 1cm;  
+                                width: 4cm; height: 1cm; background-color: rgb(122, 121, 119);"  (click)="close()"></button>
+                        </div> 
+                    </div>                     
+                </div>   
+            </div>           
+        </div>       
+    </div>
+</div>

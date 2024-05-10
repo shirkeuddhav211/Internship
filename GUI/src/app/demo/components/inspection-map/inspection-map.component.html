@@ -1,0 +1,43 @@
+<!-- <google-map
+    height="800px"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom"
+    (mapClick)="addmarker($event)">
+    <map-marker *ngFor="let marker of markerPositions" [position]="marker" [options]="markerOptions"></map-marker>
+
+    
+  </google-map> -->
+
+  <!-- <div class="my-google-map">
+    <google-map [options]="mapOptions">
+       <map-marker [position]="marker.position"></map-marker>
+    </google-map>
+ </div> -->
+
+ <div class="grid">
+	<div class="col-12">
+		
+			<div class="row">
+				<div class="col-md-4">
+					
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<button style="width: 4cm; background-color: #0068a3;color: white;border: none;border-radius: 6px;padding: 5px;float: right;margin-bottom: 10px; " (click)="GotoInsp()">
+						Back</button>
+				</div>
+			</div>
+            
+            <div class="map">
+                <google-map #myGoogleMap height="100vh"
+                            width="100%"
+                            [options]="mapOptions">
+                  <map-marker *ngFor="let marker of markers"
+                              [position]="marker.position"></map-marker>
+                </google-map>
+              </div>
+
+              
+    </div>
+</div>
