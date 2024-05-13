@@ -20,6 +20,7 @@ import { HolidaymasterComponent } from './demo/components/holidaymaster/holidaym
 import { InspectionMapComponent } from './demo/components/inspection-map/inspection-map.component';
 import { ResidentuserComponent } from './demo/components/residentuser/residentuser.component';
 import { NewInspectionComponent } from './demo/components/inspection/new-inspection/new-inspection.component';
+import { NoticeComponent } from './demo/components/notice/notice.component';
 
 
 
@@ -48,6 +49,7 @@ import { NewInspectionComponent } from './demo/components/inspection/new-inspect
                     {path:'inspecform' , component:InspectionaddeditComponent},
                     {path:'inspectionformlist' , component:InspectionsListComponent},
                     {path:'newinspection',component:NewInspectionComponent},
+                    {path:'notice', component:NoticeComponent},
                     
                     { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },

@@ -53,7 +53,8 @@ export class AppMenuComponent implements OnInit {
                         { label: 'Users', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/list1'] },                        
                         
                         { label: 'Inspection Type', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/inspectionlist'] ,hidden: true },  
-                        { label: 'Holiday', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/holidaylist'] ,hidden: true},          
+                        { label: 'Holiday', icon: 'pi pi-fw pi-id-card', routerLink: ['/app/holidaylist'] ,hidden: true}, 
+                        { label: 'Notice', icon: 'pi pi-fw pi-envelope', routerLink: ['/app/notice'] ,hidden: true}         
                     ]
                 },                
             ];

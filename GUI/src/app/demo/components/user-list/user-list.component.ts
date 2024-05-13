@@ -60,7 +60,7 @@ export class UserListComponent {
     if(event.checked == true){
       this.authenticateservice.GetUserList().subscribe((response: RegisterModel[]) => {
         this.userList = response;
-        this.userList = this.userList.filter(x=>x.RoleName == "Resident");
+        //this.userList = this.userList(.filter(x=>x.RoleName == "Resident"));
         
       }, (error:any)=> {
        
