@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GISApi.Data.GlobalEntities;
 
-[Keyless]
 [Table("tblInspectionAttribute")]
 public partial class TblInspectionAttribute
 {
+    [Key]
     [Column("InsAtrID")]
     public int InsAtrId { get; set; }
 

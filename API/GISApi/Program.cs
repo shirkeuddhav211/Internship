@@ -183,6 +183,7 @@ builder.Services.AddTransient<IUserService, UsersService>();
 builder.Services.AddTransient<IInspectionTypeService, InspectionTypeService>();
 builder.Services.AddTransient<IInspectionService, InspectionService>();
 builder.Services.AddTransient<IHolidayMasterService, HolidayMasterService>();
+builder.Services.AddTransient<INoticeService, NoticeService>();
 builder.Services.AddScoped<IJwtFactory, JwtFactory>();
 builder.Services.AddScoped<ICommonService, CommonService>();
 

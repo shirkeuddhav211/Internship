@@ -24,7 +24,6 @@ public partial class TblLoginInfo
     [StringLength(50)]
     public string? LastName { get; set; }
 
-    [StringLength(50)]
     public string? Department { get; set; }
 
     [StringLength(20)]

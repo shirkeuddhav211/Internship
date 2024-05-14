@@ -6,14 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GISApi.Data.GlobalEntities;
 
-[Table("HolidayMaster")]
-public partial class HolidayMaster
+[Table("Notice")]
+public partial class Notice
 {
     [Key]
     public int Id { get; set; }
 
-    [Column(TypeName = "datetime")]
-    public DateTime? HolidayDate { get; set; }
-
-    public string? Description { get; set; }
+    [Column("Notice")]
+    public string? Notice1 { get; set; }
 }

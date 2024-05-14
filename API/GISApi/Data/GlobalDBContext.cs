@@ -16,6 +16,8 @@ public partial class GlobalDBContext : DbContext
     {
     }
 
+    public virtual DbSet<AdminMessage> AdminMessages { get; set; }
+
     public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
 
     public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
@@ -39,6 +41,8 @@ public partial class GlobalDBContext : DbContext
     public virtual DbSet<InspectionType> InspectionTypes { get; set; }
 
     public virtual DbSet<InspectionsWithRejectedAttrView> InspectionsWithRejectedAttrViews { get; set; }
+
+    public virtual DbSet<Notice> Notices { get; set; }
 
     public virtual DbSet<TblAttribute> TblAttributes { get; set; }
 
@@ -70,6 +74,7 @@ public partial class GlobalDBContext : DbContext
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         }
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<InspectionNumberGenerator>(entity =>
@@ -80,6 +85,11 @@ public partial class GlobalDBContext : DbContext
         modelBuilder.Entity<InspectionsWithRejectedAttrView>(entity =>
         {
             entity.ToView("InspectionsWithRejectedAttr_View");
+        });
+
+        modelBuilder.Entity<Notice>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<TblEmailRequest>(entity =>
@@ -101,7 +111,6 @@ public partial class GlobalDBContext : DbContext
         modelBuilder.Entity<TblInspectionAttribute>(entity =>
         {
             entity.Property(e => e.DateCreated).HasDefaultValueSql("(getdate())");
-            entity.Property(e => e.InsAtrId).ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<TblInspectionAttribute1>(entity =>
