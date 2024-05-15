@@ -74,6 +74,8 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { NoticeComponent } from './demo/components/notice/notice.component';
+import { NoticeaddeditComponent } from './demo/components/notice/noticeaddedit.component';
 
 const initializerConfigFn = (appConfig: AppConfigService) => {
     return () => {
@@ -86,7 +88,7 @@ const initializerConfigFn = (appConfig: AppConfigService) => {
         LoginForm1Component, LoginAComponent, RegisteruserComponent, ChangepswdComponent,
         HolidaymasterComponent,HolidaymasteraddComponent,
          RegisterusenewComponent, ForgetpasswordComponent, InspectiontypeComponent,UserListComponent,InspectionComponent,InspectionaddeditComponent,
-         InspectionsListComponent,DashboardComponent,InspectionMapComponent,ResidentuserComponent, NewInspectionComponent
+         InspectionsListComponent,DashboardComponent,InspectionMapComponent,ResidentuserComponent, NewInspectionComponent , NoticeComponent, NoticeaddeditComponent
     ],
     imports: [
         AppRoutingModule,
