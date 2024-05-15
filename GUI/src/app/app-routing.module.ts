@@ -21,6 +21,7 @@ import { InspectionMapComponent } from './demo/components/inspection-map/inspect
 import { ResidentuserComponent } from './demo/components/residentuser/residentuser.component';
 import { NewInspectionComponent } from './demo/components/inspection/new-inspection/new-inspection.component';
 import { NoticeComponent } from './demo/components/notice/notice.component';
+import { NoticeaddeditComponent } from './demo/components/notice/noticeaddedit.component';
 
 
 
@@ -50,7 +51,7 @@ import { NoticeComponent } from './demo/components/notice/notice.component';
                     {path:'inspectionformlist' , component:InspectionsListComponent},
                     {path:'newinspection',component:NewInspectionComponent},
                     {path:'notice', component:NoticeComponent},
-                    
+                    {path:'noticeaddedit', component:NoticeaddeditComponent}, 
                     { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
