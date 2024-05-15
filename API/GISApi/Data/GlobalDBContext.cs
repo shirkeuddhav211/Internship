@@ -62,12 +62,13 @@ public partial class GlobalDBContext : DbContext
 
     public virtual DbSet<UserResetPassword> UserResetPasswords { get; set; }
 
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
-       .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-       .AddJsonFile("appsettings.json")
-       .Build();
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
 
         if (!optionsBuilder.IsConfigured)
         {
@@ -85,11 +86,6 @@ public partial class GlobalDBContext : DbContext
         modelBuilder.Entity<InspectionsWithRejectedAttrView>(entity =>
         {
             entity.ToView("InspectionsWithRejectedAttr_View");
-        });
-
-        modelBuilder.Entity<Notice>(entity =>
-        {
-            entity.Property(e => e.Id).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<TblEmailRequest>(entity =>

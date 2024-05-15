@@ -11,6 +11,7 @@ namespace GISApi.Services
         Task<Notice> GetNoticeById(int id);
         Task<List<Notice>> GetNoticeList();
         string DeleteNoticeById(int id);
+        Task<Notice> EditNotice(Notice model);
     }
     public class NoticeService : INoticeService
     {
@@ -105,6 +106,27 @@ namespace GISApi.Services
             {
                 _logger.LogError("Error occured in [NoticeService] - DeleteNoticeById() Exception is : " + ex);
                 return "Fail";
+            }
+        }
+
+        public async Task<Notice> EditNotice(Notice model)
+        {
+            try
+            {
+                var resultUpdate = await _GlobalDBContext.Notices.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
+
+                resultUpdate.Notice1 = model.Notice1;
+
+                var result = _GlobalDBContext.Notices.Update(resultUpdate);
+                await _GlobalDBContext.SaveChangesAsync();
+
+                return resultUpdate;
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error occured in [NoticeService] - EditNotice() Exception is : " + ex);
+                return null;
             }
         }
     }

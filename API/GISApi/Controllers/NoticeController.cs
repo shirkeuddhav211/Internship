@@ -14,8 +14,13 @@ using Microsoft.AspNetCore.Cors;
 
 namespace GISApi.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
+    [Route("api/[controller]")]
+    [ApiController]
+    [AllowAnonymous]
     public class NoticeController : ControllerBase
-    {
+    {  
+
         private readonly ICommonService _commonService;
 
         private readonly ILogger<UsersController> _logger;
@@ -52,6 +57,26 @@ namespace GISApi.Controllers
 
         }
 
+        [HttpPost]
+        [Route("AddEditNotice")]
+        [EnableCors("AllowSpecificOrigin")]
+        public async Task<Notice> AddEditNotice()
+        {
+            try
+            {
+                Notice notice = JsonConvert.DeserializeObject<Notice>(HttpContext.Request.Form["notice"]);
+
+                return await _noticeService.AddEditNotice(notice);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error occured in [NoticeController] - AddEditNotice(inspectionTypes) Exception is : " + ex);
+                return null;
+            }
+
+        }
+
         [HttpPut("{id}")]
 
         public async Task<ActionResult> Put(string id, [FromBody] Notice model)
@@ -60,12 +85,12 @@ namespace GISApi.Controllers
             {
                 Notice editModel = null;
 
-                editModel = await _noticeService.AddEditNotice(model);
+                editModel = await _noticeService.EditNotice(model);
                 return Ok(editModel);
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error occured in [NoticeController] - AddEditNotice(notice) Exception is : " + ex);
+                _logger.LogError("Error occured in [NoticeController] - EditNotice(notice) Exception is : " + ex);
                 return null;
             }
         }
