@@ -199,7 +199,11 @@ async saveTDate(event,inspectionId) :Promise<any> {
 
   }
 
-  isAck(values:any, id:string):void {
+  isAck(values:any, id:string , event):void {
+if(this.inspectionModel.InspectorName == ""){
+  this.toastr.success('Please Select Inspector');
+  return;
+}
     console.log(values.currentTarget.checked);
     const ackVALUE = values.currentTarget.checked
     const newackid = id
@@ -211,7 +215,7 @@ async saveTDate(event,inspectionId) :Promise<any> {
    
   }
 
-  rejectValue(){
+  rejectValue(){   
     //this.inspectionModel.RejectionComments 
     if(this.inspectionModel.RejectionComments != '' || this.inspectionModel.RejectionComments != undefined )
     {
@@ -226,6 +230,7 @@ async saveTDate(event,inspectionId) :Promise<any> {
   }
 
   isReject(values:any, id:string){
+
     console.log(values.currentTarget.checked);
     const rejectVALUE = values.currentTarget.checked
     const newackid = id

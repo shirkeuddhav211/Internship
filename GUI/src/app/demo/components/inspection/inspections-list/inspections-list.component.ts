@@ -354,8 +354,10 @@ export class InspectionsListComponent {
         if(this.isResient == true){
           this.inspectionList = response;  
          this.inspectionList = this.inspectionList.filter(x=>x.CreatedBy == this.user.userId )
-        }else{
+        }
+        else{
           this.inspectionList = response;  
+          this.inspectionList  = this.inspectionList .filter(x => x.InspectionStatus != "New");
         }
             
 
