@@ -314,16 +314,20 @@
     <!-- </div>
     </div>
 </div> -->
-
+<style>
+    .bgcolor{
+        background-color: #F0A1F9;
+    }
+</style>
 <div class="grid">
     <div class="col-12">
         <div class="card " >
-            <h4 style="font-size: 25px;font-weight: bold" >Inspection Form</h4>
+            <h4 style="font-size: 25px;font-weight: bold "  >Inspection Form</h4>
             <div class="card-body">
                 <div class="p-fluid p-formgrid grid gridpadding" >
                     <div class="row">
                         <div class="col-md-4">
-                            <button class="l2" pButton pRipple label="User Information" style="width: 170px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
+                            <button class="l2" pButton pRipple label="User Information" style="width: 170px; padding: 5px !important; font-size: 17px !important; background-color:  #F0A1F9;color: rgb(22, 22, 21);" class="p-3 text-xl" 
                             ></button>
                         </div>
                     </div>
@@ -375,7 +379,7 @@
                 <div class="p-fluid p-formgrid grid gridpadding">
                     <div class="row" style="padding-top: 10px;">
                         <div class="col-md-4">
-                            <button class="l2" pButton pRipple label="Inspection Information" style="width: 200px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
+                            <button class="l2" pButton pRipple label="Inspection Information" style="width: 200px; padding: 5px !important; font-size: 17px !important; background-color:  #F0A1F9;color: rgb(22, 22, 21);" class="p-3 text-xl" 
                             ></button>
                         </div>
                     </div>
@@ -518,8 +522,9 @@
                     <div class="p-fluid p-formgrid grid gridpadding">
                         <div class="field col-12 md:col-4"></div>
                         <div class="field col-12 md:col-4 fieldpadding">
+                            <!-- #F0A1F9;color: rgb(22, 22, 21); -->
                             <button pButton pRipple label="Submit"  class="p-3 text-xl" style=" width: 4cm; 
-                                height: 1cm; " (click)="onSubmit()"></button>&nbsp;
+                                height: 1cm; background-color: #F0A1F9;" (click)="onSubmit()"></button>&nbsp;
                             <button pButton pRipple label="Back to List" class="p-3 text-xl" style="  margin-top: 1cm;  
                                 width: 4cm; height: 1cm; background-color: rgb(122, 121, 119);"  (click)="close()"></button>
                         </div> 

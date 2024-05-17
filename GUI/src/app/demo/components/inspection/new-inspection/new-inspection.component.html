@@ -7,7 +7,7 @@
 				</div>
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-					<button style="width: 4cm; background-color: #0068a3;color: white;border: none;border-radius: 6px;padding: 5px;float: right; " (click)="GotoInsp()">
+					<button style="width: 4cm; background-color:#F0A1F9;color: rgb(22, 22, 21);border: none;border-radius: 6px;padding: 5px;float: right; " (click)="GotoInsp()">
 						Back</button>
 				</div>
 			</div>
@@ -32,10 +32,10 @@
 							<p-calendar  [(ngModel)] = "this.toDate" 	dateFormat="mm/dd/yy" [showIcon]="true"  Style="height: 1cm; width: 5cm; ">  </p-calendar>  
 							&nbsp;
 						</div>
-						
+						<!-- #F0A1F9;color: rgb(22, 22, 21); -->
 						<div class="col-md-6" >
 							<button pButton label="Clear" class="p-button-outlined mb-2" 
-							style="border-color: #0068a3; color: #0068a3; float: right;padding: 5px 5px;" (click)="clear(dt1)"></button>
+							style="border-color: #F0A1F9; color: #6e087a; float: right;padding: 5px 5px;" (click)="clear(dt1)"></button>
 											
 							<span class="p-input-icon-left mb-2" style="float: inline-end;">
 								<i class="pi pi-search"></i>
@@ -71,37 +71,37 @@
 					<tr style="    border-color: inherit;
 					border-width: 1px;
 					border-style: double;">
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="Acknlowledge" *ngIf="this.userRole !== 'Resident'">
+						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Acknlowledge" *ngIf="this.userRole !== 'Resident'">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Acknlowledge<p-sortIcon field="Acknlowledge" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="Reject" *ngIf="this.userRole !== 'Resident'">
+						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Reject" *ngIf="this.userRole !== 'Resident'">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Reject<p-sortIcon field="Reject" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 9rem; background-color: #0068a3;color: white;" pSortableColumn="AddressLine1" > 
+						<th style="min-width: 9rem; background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AddressLine1" > 
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important; ">
 								Address<p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th> 
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="PermitNo">
+						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="PermitNo">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Permit#<p-sortIcon cfield="PermitNo" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="InspectionDate">
+						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionDate">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Date<p-sortIcon field="Date" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 11rem;background-color: #0068a3;color: white;" pSortableColumn="Inspector">
+						<th style="min-width: 11rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Inspector">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Inspector<p-sortIcon field="Inspector" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 7rem;background-color: #0068a3;color: white;" pSortableColumn="AmPm">
+						<th style="min-width: 7rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AmPm">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								AM/PM<p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
@@ -109,30 +109,30 @@
 						
 						
 						
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="InspectionType1">
+						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType1">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Inspection1<p-sortIcon field="Inspection1" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
 						
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="InspectionType2">
+						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType2">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Inspection2<p-sortIcon field="Inspection2" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
 						
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="InspectionType3">
+						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType3">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Inspection3<p-sortIcon field="Inspection3" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
 						
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="InspectionType4">
+						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType4">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Inspection4<p-sortIcon field="Inspection4" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
 						</th>
-						<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="Comments">
+						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Comments">
 							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
 								Comments<p-sortIcon field="Comments" style="padding-left: 3px;"></p-sortIcon>								
 							</div>
