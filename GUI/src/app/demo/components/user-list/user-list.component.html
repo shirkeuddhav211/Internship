@@ -25,7 +25,7 @@
 					<div class="row">
 						<div class="col-md-5"></div>
 						<div class="col-md-5 setview" >
-							<label class="p-input-icon-left mb-2 checkboxsize viewlabel" for="address" >Show All</label>
+							<label class="p-input-icon-left mb-2 checkboxsize viewlabel" for="address" >Show Resident</label>
 							<p-checkbox  (onChange)="change($event)" class="form-check-input p-input-icon-left mb-2 checkboxsize viewcheckbox"   [binary]="true"  [(ngModel)]="checked"  >  </p-checkbox>
                            
 							
@@ -84,20 +84,20 @@
 						<th style="min-width: 12rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Name">
 							<div class="flex justify-content-between align-items-center">
 								Name
-								<p-sortIcon field="Name" style="padding-left: 3px;"></p-sortIcon>
+								<!-- <p-sortIcon field="Name" style="padding-left: 3px;"></p-sortIcon> -->
 							</div>
 						</th>
                         
                         <th style="min-width: 12rem;background-color:  #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Email">
 							<div class="flex justify-content-between align-items-center">
 								Email
-								<p-sortIcon field="Email" style="padding-left: 3px;"></p-sortIcon>
+								<!-- <p-sortIcon field="Email" style="padding-left: 3px;"></p-sortIcon> -->
 							</div>
 						</th>
 						<th style="min-width: 12rem;background-color:  #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="RoleName">
 							<div class="flex justify-content-between align-items-center">
 								Role
-								<p-sortIcon field="RoleName" style="padding-left: 3px;"></p-sortIcon>
+								<!-- <p-sortIcon field="RoleName" style="padding-left: 3px;"></p-sortIcon> -->
 							</div>
 						</th>
                         <th style="min-width: 12rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" *ngIf="!isResident">
@@ -123,17 +123,19 @@
 							{{userList.RoleName}}
 						</td>
                         <td *ngIf="!isResident">
-							<button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(userList.Id)" 
-							style="display: inline-flex; padding: 3px; color: white;" title="Edit"></button>
-
+							<!-- <i  icon="pi pi-file-edit" (click)="OnEdit(userList.Id)" 
+							style="color: #306235; font-size: 20px; " ></i> -->
+							<i (click)="OnEdit(userList.Id)"
+									 class="pi pi-file-edit"
+									style="color: #306235; font-size: 20px; "></i>
 							&nbsp;
 							<!-- <button pButton class="btn btn-danger " icon="pi pi-trash" (click)="DeleteUser(userList.Id)" style="display: inline-flex;padding: 3px;"></button> -->
-							<button pButton *ngIf="userList.IsActive && this.loggedInUserId != userList.Id" class="btn btn-danger btn-sm" title="Delete"
+							<!-- <button pButton *ngIf="userList.IsActive && this.loggedInUserId != userList.Id" class="btn btn-danger btn-sm" title="Delete"
 							  icon="pi pi-trash" (click)="DeleteUser(userList.Id)" style="display: inline-flex;padding: 3px;" >                     
                     		</button>&nbsp;
 							<button pButton	*ngIf="!userList.IsActive" class="btn btn-success btn-sm" title="Activate"
 								(click)="ActivateUser(userList.Id)" icon="pi pi-pencil" >
-                   		    </button>
+                   		    </button> -->
 <!-- 							
 							<p-toggleButton *ngIf="userList.IsActive" [(ngModel)]="userList.IsActive" (onChange)="ActivateUser(userList.Id)" onLabel="Delete" offLabel="Active" style="height: 30px;"></p-toggleButton> -->
 						</td>

@@ -53,14 +53,14 @@
 						<th style="min-width: 12rem;background-color:  #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionTypeName">
 							<div class="flex justify-content-between align-items-center">
 								Inspection Type
-								<p-sortIcon field="InspectionTypeName" style="padding-left: 3px;"></p-sortIcon>
+								<!-- <p-sortIcon field="InspectionTypeName" style="padding-left: 3px;"></p-sortIcon> -->
 							</div>
 						</th>
 
                         <th style="min-width: 12rem;background-color:  #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="IsActive">
 							<div class="flex justify-content-between align-items-center">
 								Active
-								<p-sortIcon field="IsActive" style="padding-left: 3px;"></p-sortIcon>
+								<!-- <p-sortIcon field="IsActive" style="padding-left: 3px;"></p-sortIcon> -->
 							</div>
 						</th>
                         <th style="min-width: 12rem;background-color:  #F0A1F9;color: rgb(22, 22, 21);">
@@ -79,9 +79,15 @@
 					border-width: 1px;
 					border-style: double;">
                         <td>{{inspectiontypes.InspectionTypeName}}</td>
-						<td><!--<input class="form-check-input mt-2" type="checkbox" value="" id="checkbox" checked={{inspectiontypes.IsActive}}>-->
-							{{inspectiontypes.IsActive == true?"Yes":"No"}}
-						</td>                        
+						<!-- <td>
+							<input class="form-check-input mt-2" type="checkbox" value="" id="checkbox" checked={{inspectiontypes.IsActive}}>
+							 {{inspectiontypes.IsActive == true?"Yes":"No"}} 
+						</td>  -->  
+						<td>
+							<input class="form-check-input mt-2" type="checkbox" id="checkbox" [checked]="inspectiontypes.IsActive" disabled>
+						</td>
+						
+									 
                         <td>
 							<button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(inspectiontypes.Id)" style="display: inline-flex; padding: 3px; color: white;"></button>					
 
