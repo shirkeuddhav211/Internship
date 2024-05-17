@@ -1,5 +1,4 @@
-export class NoticeType{
+export class Notice{
     Id:number;
-    Notice:string;
-
+    Notice1:string;
 }

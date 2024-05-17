@@ -42,7 +42,9 @@
 								&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm;  width: 5cm; " [(ngModel)]="this.toDate"> -->
 							</div>
 							<div class="col-md-6 " *ngIf="this.userRole !== 'Staff'">
-								<button style="width: 3cm; background-color: #0068a3;color: white;border: none;border-radius: 6px;padding: 5px;margin-top: 20px " (click)="GetInspectiontList(this.fromDate,this.toDate)">
+								<button
+									style="width: 3cm; background-color: #0068a3;color: white;border: none;border-radius: 6px;padding: 5px;margin-top: 20px "
+									(click)="GetInspectiontList(this.fromDate,this.toDate)">
 									<i class="pi pi-search"></i>&nbsp;Search</button>&nbsp;
 								<button *ngIf="!isResient" style="width: 3cm; background-color: #0068a3;color: white;border: none;border-radius: 6px;padding: 5px;
 										height: 35px;	 " (click)="GotoNewInsp()">
@@ -108,7 +110,7 @@
 								<div class='box reject'> </div>&nbsp;<span style="font-weight: 100;font-style: italic;
 								font-size: 12px;"> Request Cancelled or Rejected </span>
 							</div>
-							
+
 						</div>
 					</ng-template>
 					<ng-template pTemplate="header">
@@ -116,8 +118,7 @@
 						<tr style="    border-color: inherit;
 						border-width: 1px;
 						border-style: double;">
-							<th style="width: 5rem;background-color: #0068a3;color: white;"
-								pSortableColumn="Action">
+							<th style="width: 5rem;background-color: #0068a3;color: white;" pSortableColumn="Action">
 								<div class="flex justify-content-between align-items-center"
 									style="display: inline-flex !important;">
 									Action
@@ -140,7 +141,7 @@
 							<th style="min-width: 9rem; background-color: #0068a3;color: white;"
 								pSortableColumn="AddressLine1">
 								<div class="flex justify-content-between align-items-center"
-									style="display: inline-flex !important; " >
+									style="display: inline-flex !important; ">
 									Address<p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon>
 								</div>
 							</th>
@@ -229,7 +230,8 @@
 									AM/PM<p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon>
 								</div>
 							</th>
-							<th style="min-width: 9rem;background-color: #0068a3;color: white;" pSortableColumn="RejectComments">
+							<th style="min-width: 9rem;background-color: #0068a3;color: white;"
+								pSortableColumn="RejectComments">
 								<div class="flex justify-content-between align-items-center"
 									style="display: inline-flex !important;">
 									Comments<p-sortIcon field="RejectComments" style="padding-left: 3px;"></p-sortIcon>
@@ -246,46 +248,49 @@
 					<ng-template pTemplate="body" let-inspectionList>
 						<tr style="    border-color: inherit;
 						border-width: 1px;
-						border-style: double;"  
+						border-style: double;"
 							[ngClass]="inspectionList.InspectionStatus == 'Rejected'?'reject':inspectionList.InspectionStatus == 'Acknowledge'?'acknowledge':''">
 							<td style="width: 20px;">
 								<!-- <button *ngIf="!isResient" pButton class="btn btn-warning" icon="pi pi-pencil"
 									(click)="OnEdit(inspectionList.Id)"
 									style="display: inline-flex; padding: 3px; color: white;"></button> -->
-									<i (click)="OnDelete(inspectionList.Id)"
-									class="pi pi-trash" style="color: red; font-size: 20px;"></i>
+								<i (click)="OnDelete(inspectionList.Id)" class="pi pi-trash"
+									style="color: red; font-size: 20px;"></i>
 
 								<!-- <button class="btn btn-warning" style="margin-right: 10px;" (click)="OnEdit(inspectionList.Id)" icon="pi-pencil">
 								</button> -->&nbsp;
 								<!-- <button pButton class="btn btn-danger " icon="pi pi-trash"
 									(click)="OnDelete(inspectionList.Id)"
-									style="display: inline-flex;padding: 3px;"></button> --><i (click)="OnEdit(inspectionList.Id)" *ngIf="!isResient"
-									class="pi pi-file-edit" style="color: #306235; font-size: 20px; "></i>
-									
+									style="display: inline-flex;padding: 3px;"></button> --><i (click)="OnEdit(inspectionList.Id)"
+									*ngIf="!isResient" class="pi pi-file-edit"
+									style="color: #306235; font-size: 20px; "></i>
+
 
 							</td>
 
 							<td *ngIf="isResident" style="text-align: center;">
 								{{inspectionList.FirstName}}
 							</td>
-							<td  *ngIf="isResident" style="text-align: center;">
+							<td *ngIf="isResident" style="text-align: center;">
 								{{inspectionList.LastName}}
 							</td>
-							<td style="text-align: center;" >
+							<td style="text-align: center;">
 
 								<span class="myDIV"> {{inspectionList.AddressLine1.slice(0, 10)}}<br></span>
 								<span class="hide">{{inspectionList.AddressLine1.substr(10)}}</span>
 							</td>
-							
-							<td *ngIf="!isResient">
+
+							<!-- <td *ngIf="!isResient">
 								<div class="field">
 									<p-dropdown [options]="userList" optionLabel="Name" optionValue="Name"
 										[(ngModel)]="inspectionList.InspectorName"
 										(onChange)="saveInspector($event,inspectionList.Id)"></p-dropdown>
 								</div>
 
-							</td>
-							<td *ngIf="isResient" style="text-align: center;">{{inspectionList.InspectorName}}</td>
+							</td> -->
+							<!-- <td *ngIf="isResient" style="text-align: center;">{{inspectionList.InspectorName}}</td> -->
+							<td style="text-align: center;">{{inspectionList.InspectorName}}</td>
+
 							<td style="text-align: center;">
 								{{inspectionList.PermitNo }}
 							</td>
@@ -342,7 +347,7 @@
 				</p-table>
 			</div>
 		</div>
-		
+
 		<div *ngIf="(windowRef?.innerWidth < 768)">
 			<p-table #dt1 [value]="inspectionList" dataKey="id" [rows]="10" [loading]="loading" [rowHover]="true"
 				styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['InspectionOrder','InspectionDate','FirstName','LastName',
