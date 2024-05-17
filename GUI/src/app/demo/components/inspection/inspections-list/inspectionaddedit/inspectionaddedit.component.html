@@ -323,7 +323,7 @@
                 <div class="p-fluid p-formgrid grid gridpadding" >
                     <div class="row">
                         <div class="col-md-4">
-                            <button class="l2" pButton pRipple label="User Information" style="width: 170px; padding: 5px !important; font-size: 17px !important;background-color:  #F0A1F9;color: rgb(32, 32, 32);" class="p-3 text-xl" 
+                            <button class="l2" pButton pRipple label="User Information" style="width: 170px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
                             ></button>
                         </div>
                     </div>
@@ -375,7 +375,7 @@
                 <div class="p-fluid p-formgrid grid gridpadding">
                     <div class="row" style="padding-top: 10px;">
                         <div class="col-md-4">
-                            <button class="l2" pButton pRipple label="Inspection Information" style="width: 200px; padding: 5px !important; font-size: 17px !important; background-color:  #F0A1F9;color: rgb(32, 32, 32);" class="p-3 text-xl" 
+                            <button class="l2" pButton pRipple label="Inspection Information" style="width: 200px; padding: 5px !important; font-size: 17px !important;" class="p-3 text-xl" 
                             ></button>
                         </div>
                     </div>
@@ -455,7 +455,7 @@
                         </div> 
                         <div class="field col-12 md:col-3 fieldpadding">
                             <label class="lableshow">Date:</label>                           
-                            <p-calendar class="required showrequired" [(ngModel)] = "inspectionInfo.InspectionDate" style="background-color:  #F0A1F9;" (click)="checkHoliday()"
+                            <p-calendar class="required showrequired" [(ngModel)] = "inspectionInfo.InspectionDate" (click)="checkHoliday()"
                              dateFormat="mm/dd/yy" [showIcon]="true">  </p-calendar>                             
                         </div>
                         <div class="field col-12 md:col-3 fieldpadding">
@@ -519,7 +519,7 @@
                         <div class="field col-12 md:col-4"></div>
                         <div class="field col-12 md:col-4 fieldpadding">
                             <button pButton pRipple label="Submit"  class="p-3 text-xl" style=" width: 4cm; 
-                                height: 1cm; background-color:  #F0A1F9;" (click)="onSubmit()"></button>&nbsp;
+                                height: 1cm; " (click)="onSubmit()"></button>&nbsp;
                             <button pButton pRipple label="Back to List" class="p-3 text-xl" style="  margin-top: 1cm;  
                                 width: 4cm; height: 1cm; background-color: rgb(122, 121, 119);"  (click)="close()"></button>
                         </div> 

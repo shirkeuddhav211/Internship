@@ -39,7 +39,7 @@
     .main{
         
     font-family: Segoe UI, Helvetica, Arial, sans-serif;
-    color: #f5d8f8;
+    color: #444444;
     width: 100%;
     height: 100%;
     background-color: #eae3da;
@@ -77,12 +77,6 @@
     border-style: solid;
     background-color: #ffffff;
     }
-
-    
-    .bgcolor{
-        background-color:#6e087a;
-    }
-
 </style>
 <!-- <div class="main">
     <div class="banner">
@@ -187,7 +181,7 @@
         <div class="col-md-4" style="padding-top: 100px;">           
             <div style="background-color: white; width: 100%; border: 15px solid white;  
                  margin: 20px;">  
-                <div style="background-color: #6e087a; padding-top: 10px; padding-bottom: 5px;">
+                <div style="background-color: #0068a3; padding-top: 10px; padding-bottom: 5px;">
                     <h4 style=" color: white; text-align: center;">Inspection Tracking System</h4>
                 </div>              
                 <div style="padding: 10px;">
@@ -212,12 +206,12 @@
                         style="color: var(--secondary-color)">Forgot password?</a>
                                                                   
                     </div>  
-                    <div class="field col-12 md:col-4 "></div>   
-                    <div class="field col-12 md:col-4 " *ngIf="!isForgotPassword">
-                        <p-button label="Login" class="mt-2 "  (click)="onSubmit()"></p-button>
+                    <div class="field col-12 md:col-4"></div>   
+                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
+                        <p-button label="Login" class="mt-2"  (click)="onSubmit()"></p-button>
                     </div>  
-                    <div class="field col-12 md:col-4 " *ngIf="isForgotPassword">
-                        <p-button label="Submit" class="mt-2 bgcolor"  (click)="onSubmit()"></p-button>
+                    <div class="field col-12 md:col-4" *ngIf="isForgotPassword">
+                        <p-button label="Submit" class="mt-2"  (click)="onSubmit()"></p-button>
                     </div>                    
                 </div> 
                 <div class="p-fluid p-formgrid grid">
