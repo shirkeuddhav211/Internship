@@ -1,1 +1,35 @@
-<p>noticeaddedit works!</p>
+<div class="grid">
+    <div class="col-12">
+        <div class="card ">
+            <h4 style="padding-top: 0%;
+            padding-bottom: 15px;          
+          color: #333; font-size: 25px;font-weight: bold" >Inspection Type</h4>
+          <div class="card-body">
+            <div class="p-fluid p-formgrid grid">
+                <div class="col-12">
+                    <div >                        
+                        <div class="p-fluid p-formgrid grid">
+                            <div class="field col-12 md:col-6">
+                                <label for="Type">Inspection Type</label>
+                                <input pInputText id="Type" type="text" [(ngModel)]="noticetype.Notice" required/>
+                            </div>
+                           
+                            <!-- <div class="field col-12 md:col-4">
+                                <label for="address">Is Active</label><br>
+                                <input pInputText type="checkbox" class="form-check-input" id="Check1" [(ngModel)]="inspectionType.IsActive" >
+                            </div>
+                                                        -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer" style="text-align: center;">
+                <button pButton pRipple label="Submit" class="p-3 text-xl" (click)="saveInspection()"></button> &nbsp;
+                <button pButton pRipple label="Close" class="p-3 text-xl" style=" background-color: rgb(122, 121, 119);" 
+                     (click)="close()"></button>
+            </div>
+        </div>       
+    </div>
+</div>

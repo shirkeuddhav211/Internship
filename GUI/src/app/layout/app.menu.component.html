@@ -1,4 +1,11 @@
-<ul class="layout-menu">
+
+<style>
+    .bgcolor{
+        background-color:#6e087a;
+    }
+</style>
+
+<ul class="layout-menu bgcolor">
     <ng-container *ngFor="let item of model; let i = index;" >
         <li app-menuitem *ngIf="!item.separator && !item.hidden" [item]="item" [index]="i" [root]="true"></li>
         <li *ngIf="item.separator" class="menu-separator"></li>

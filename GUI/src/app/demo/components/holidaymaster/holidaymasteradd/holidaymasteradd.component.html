@@ -1,4 +1,12 @@
- 
+ <style>
+     #holiday-calendar .ui-datepicker-trigger .pi {
+        color: pink;
+    }
+   
+
+
+ </style>
+  
   <div class="grid">
     <div class="col-12">
         <div class="card ">
@@ -12,8 +20,8 @@
                         <div class="p-fluid p-formgrid grid">
                             <div class="field col-12 md:col-4">
                                 <label for="Type">Holiday Date</label>
-                                <p-calendar  [(ngModel)] = "holidayModel.HolidayDate" 
-                                     dateFormat="mm/dd/yy" [showIcon]="true">  </p-calendar>  
+                                <p-calendar id="holiday-calendar"  [(ngModel)] = "holidayModel.HolidayDate" 
+                                     dateFormat="mm/dd/yy" [showIcon]="true" >  </p-calendar>  
                             </div>
                             <div class="field col-12 md:col-2"></div>
                             <div class="field col-12 md:col-6">
@@ -29,7 +37,7 @@
 
             </div>
             <div class="card-footer" style="text-align: center;">
-                <button pButton pRipple label="Submit" class="p-3 text-xl" (click)="saveHoliday()"></button> &nbsp;
+                <button pButton pRipple label="Submit" class="p-3 text-xl" style=" background-color: #F0A1F9;"   (click)="saveHoliday()"></button> &nbsp;
                 <button pButton pRipple label="Close" class="p-3 text-xl" style=" background-color: rgb(122, 121, 119);" 
                      (click)="close()"></button>
             </div>
