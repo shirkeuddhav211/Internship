@@ -6,6 +6,7 @@ using System.Data;
 using Dapper;
 using GISApi.Data.GlobalEntities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace GISApi.Services
 {
@@ -21,6 +22,7 @@ namespace GISApi.Services
         Task<Inspection> UpdateInspectionInspector(int id, string inspector);
         Task<Inspection> UpdateInspectionTime(int id, string time);
         Task<Inspection> UpdateInspectionDate(int id, string date);
+        Task<Inspection> EditInspectionack(List<InspctionViewModel> inspectiondDetail);
 
     }
     public class InspectionService : IInspectionService
@@ -240,6 +242,41 @@ namespace GISApi.Services
             }
         }
 
+        public async Task<Inspection> EditInspectionack(List<InspctionViewModel> inspectiondDetail)
+        {
+            try
+            {
+                foreach (var item in inspectiondDetail)
+                {
+                    var resultUpdate = await _GlobalDBContext.Inspections.Where(x => x.Id == Convert.ToInt32(item.Id)).FirstOrDefaultAsync();
+
+                    if(item.Acknowledge == true)
+                    {
+                        resultUpdate.Acknowledge = item.Acknowledge;
+                        resultUpdate.InspectionStatus = "Acknowledge";
+                        resultUpdate.InspectorName = item.InspectorName;
+                    }
+                    if (item.IsRejected == true)
+                    {
+                        resultUpdate.IsRejected = item.IsRejected;
+                        resultUpdate.RejectComments = item.RejectComments;
+                        resultUpdate.InspectionStatus = "Rejected";
+                    }
+
+                    var result = _GlobalDBContext.Inspections.Update(resultUpdate);
+                    await _GlobalDBContext.SaveChangesAsync();
+
+                   // return resultUpdate;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error occured in [InspectionService] - EditInspectionackValue() Exception is : " + ex);
+                return null;
+            }
+        }
         public string DeleteInspectionById(int id)
         {
             try

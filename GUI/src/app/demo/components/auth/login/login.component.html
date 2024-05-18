@@ -68,7 +68,6 @@
     width: 90%;
     display: block;
     text-align: center;
-    vertical-align: top;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -208,7 +207,9 @@
                     </div>  
                     <div class="field col-12 md:col-4"></div>   
                     <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
-                        <p-button label="Login" class="mt-2"  (click)="onSubmit()"></p-button>
+                        <button pButton  label="Login" style="background-color: #6e087a" class="mt-2"  (click)="onSubmit()"></button>
+                        <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
+
                     </div>  
                     <div class="field col-12 md:col-4" *ngIf="isForgotPassword">
                         <p-button label="Submit" class="mt-2"  (click)="onSubmit()"></p-button>

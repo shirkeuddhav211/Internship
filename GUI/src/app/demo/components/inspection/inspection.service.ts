@@ -52,6 +52,15 @@ export class InspectionService {
     .post<string>(this.gnBaseURL + "Inspection/AddInspectionDetail", formData);    
   } 
 
+  public EditInspectionDetail(inspectionDetails)
+  {   
+    var formData = new FormData();
+    formData.append("InspectionDetail", JSON.stringify(inspectionDetails));   
+    return this.http
+    .put<string>(this.gnBaseURL + "Inspection/EditInspectionDetail/", formData);    
+  } 
+
+
   public GetInspectionDetailsById(inspectionId: number): Observable<Inspection> {
     return this.http
       .get<Inspection>(this.gnBaseURL + "Inspection/GetInspectionDetailsById?inspectionId=" + inspectionId);

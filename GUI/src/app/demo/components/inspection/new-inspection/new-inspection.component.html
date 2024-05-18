@@ -1,50 +1,55 @@
 <div class="grid">
 	<div class="col-12">
-		
-			<div class="row">
-				<div class="col-md-4">
-					<h4 style="text-align: left; font-weight: bold;">Edit New User Requests</h4> 
-				</div>
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
-					<button style="width: 4cm; background-color:#F0A1F9;color: rgb(22, 22, 21);border: none;border-radius: 6px;padding: 5px;float: right; " (click)="GotoInsp()">
-						Back</button>
-				</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<h4 style="text-align: left; font-weight: bold;">Edit New User Requests</h4>
 			</div>
-			
-			
-			<p-table #dt1 [value]="inspectionList" dataKey="id" [rows]="10" [loading]="loading"  
-			styleClass="p-datatable-gridlines" [paginator]="true" 
-			[globalFilterFields]="['InspectionOrder','InspectionDate','FirstName','LastName',
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<button
+					style="width: 4cm; background-color:#F0A1F9;color: rgb(22, 22, 21);border: none;border-radius: 6px;padding: 5px;float: right; "
+					(click)="GotoInsp()">
+					Back</button>
+			</div>
+		</div>
+
+
+		<p-table #dt1 [value]="inspectionList" dataKey="id" [rows]="10" [loading]="loading"
+			styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['InspectionOrder','InspectionDate','FirstName','LastName',
 			'AddressLine1','InspectorName','InspectionType1','InspectionType2','InspectionType3','InspectionType4',
 			'Status1','Status2','Status3','Status4','AmPm','PermitNo']" responsiveLayout="scroll">
-				<ng-template pTemplate="caption">
-					
-					
-					<div class="flex  flex-column sm:flex-row">
-						<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
-							<Label style="font-weight: 100;" >Inspection Date From  </Label><br>
-							<p-calendar  [(ngModel)] = "this.fromDate" 	dateFormat="mm/dd/yy" [showIcon]="true"  Style="height: 1cm; width: 5cm; ">  </p-calendar>  
-							&nbsp;
-						</div>
-						<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
-							<Label style="font-weight: 100;"  class="l1">To  </Label><br>
-							<p-calendar  [(ngModel)] = "this.toDate" 	dateFormat="mm/dd/yy" [showIcon]="true"  Style="height: 1cm; width: 5cm; ">  </p-calendar>  
-							&nbsp;
-						</div>
-						<!-- #F0A1F9;color: rgb(22, 22, 21); -->
-						<div class="col-md-6" >
-							<button pButton label="Clear" class="p-button-outlined mb-2" 
-							style="border-color: #F0A1F9; color: #6e087a; float: right;padding: 5px 5px;" (click)="clear(dt1)"></button>
-											
-							<span class="p-input-icon-left mb-2" style="float: inline-end;">
-								<i class="pi pi-search"></i>
-								<input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="Search Keyword" class="w-full"/>
-							</span>
-						</div>
-						
+			<ng-template pTemplate="caption">
+
+
+				<div class="flex  flex-column sm:flex-row">
+					<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
+						<Label style="font-weight: 100;">Inspection Date From </Label><br>
+						<p-calendar [(ngModel)]="this.fromDate" dateFormat="mm/dd/yy" [showIcon]="true"
+							Style="height: 1cm; width: 5cm; "> </p-calendar>
+						&nbsp;
 					</div>
-					<!-- <div class="row">
+					<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
+						<Label style="font-weight: 100;" class="l1">To </Label><br>
+						<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true"
+							Style="height: 1cm; width: 5cm; "> </p-calendar>
+						&nbsp;
+					</div>
+					<!-- #F0A1F9;color: rgb(22, 22, 21); -->
+					<div class="col-md-6">
+						<button pButton label="Clear" class="p-button-outlined mb-2"
+							style="border-color: #F0A1F9; color: #6e087a; float: right;padding: 5px 5px;"
+							(click)="clear(dt1)"></button>
+
+						<span class="p-input-icon-left mb-2" style="float: inline-end;">
+							<i class="pi pi-search"></i>
+							<input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)"
+								placeholder="Search Keyword" class="w-full" />
+						</span>
+					</div>
+
+				</div>
+				<!-- <div class="row">
 						<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
 							<Label style="font-weight: 100;" >Inspection Date From  </Label><br>
 							<p-calendar  [(ngModel)] = "this.fromDate" 	dateFormat="mm/dd/yy" [showIcon]="true"  Style="height: 1cm; width: 5cm; ">  </p-calendar>  
@@ -63,183 +68,212 @@
 						
 						
 					</div>	 -->
-				</ng-template>
-				<ng-template pTemplate="header">	
-								
-					
-    
-					<tr style="    border-color: inherit;
+			</ng-template>
+			<ng-template pTemplate="header">
+
+
+
+				<tr style="    border-color: inherit;
 					border-width: 1px;
 					border-style: double;">
-						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Acknlowledge" *ngIf="this.userRole !== 'Resident'">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Acknlowledge<p-sortIcon field="Acknlowledge" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Reject" *ngIf="this.userRole !== 'Resident'">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Reject<p-sortIcon field="Reject" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 9rem; background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AddressLine1" > 
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important; ">
-								Address<p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th> 
-						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="PermitNo">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Permit#<p-sortIcon cfield="PermitNo" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionDate">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Date<p-sortIcon field="Date" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 11rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Inspector">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Inspector<p-sortIcon field="Inspector" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 7rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AmPm">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								AM/PM<p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						
-						
-						
-						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType1">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Inspection1<p-sortIcon field="Inspection1" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						
-						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType2">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Inspection2<p-sortIcon field="Inspection2" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						
-						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType3">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Inspection3<p-sortIcon field="Inspection3" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						
-						<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="InspectionType4">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Inspection4<p-sortIcon field="Inspection4" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-						<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="Comments">
-							<div class="flex justify-content-between align-items-center" style="display: inline-flex !important;">
-								Comments<p-sortIcon field="Comments" style="padding-left: 3px;"></p-sortIcon>								
-							</div>
-						</th>
-							
-						
-						
-						
-						
-									
+					<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="Acknlowledge" *ngIf="this.userRole !== 'Resident'">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Acknlowledge<p-sortIcon field="Acknlowledge" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="Reject" *ngIf="this.userRole !== 'Resident'">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Reject<p-sortIcon field="Reject" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 9rem; background-color: #F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="AddressLine1">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important; ">
+							Address<p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="PermitNo">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Permit#<p-sortIcon cfield="PermitNo" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="InspectionDate">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Date<p-sortIcon field="Date" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 11rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="Inspector">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Inspector<p-sortIcon field="Inspector" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 7rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AmPm">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							AM/PM<p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
 
-					</tr>
-				</ng-template>
-                <ng-template pTemplate="body" let-inspectionList let-rowIndex="rowIndex" >
-					<tr style="    border-color: inherit;
+
+
+					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="InspectionType1">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Inspection1<p-sortIcon field="Inspection1" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+
+					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="InspectionType2">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Inspection2<p-sortIcon field="Inspection2" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+
+					<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="InspectionType3">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Inspection3<p-sortIcon field="Inspection3" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+
+					<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="InspectionType4">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Inspection4<p-sortIcon field="Inspection4" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
+						pSortableColumn="Comments">
+						<div class="flex justify-content-between align-items-center"
+							style="display: inline-flex !important;">
+							Comments<p-sortIcon field="Comments" style="padding-left: 3px;"></p-sortIcon>
+						</div>
+					</th>
+
+
+
+
+
+
+
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-inspectionList let-rowIndex="rowIndex">
+				<tr style="    border-color: inherit;
 					border-width: 1px;
-					border-style: double;" >
-						
-						<td *ngIf="this.userRole !== 'Resident'" ><input class="form-check-input " type="checkbox" value=""
-							id="checkbox" (change)="isAck($event,inspectionList.Id)" style="width: 2em;
+					border-style: double;">
+
+					<td *ngIf="this.userRole !== 'Resident'"><input class="form-check-input " type="checkbox"
+							value="inspection.Acknowledge" id="checkbox" (click)="Inspction(inspectionList)" style="width: 2em;
 							height: 2em;
 							border-style: solid;
-							border-width: 5px; margin-left: 20px; "
-							[checked]="inspectionList.Acknowledge == true">
-						</td>
-						<td *ngIf="this.userRole !== 'Resident'" ><input class="form-check-input " type="checkbox" value="" id="checkbox" 
-							 style="width: 2em;
+							border-width: 5px; margin-left: 20px;" 
+							[checked]="inspectionList.Acknowledge" [binary]="true">
+					</td>
+					<td *ngIf="this.userRole !== 'Resident'">
+						<input class="form-check-input " type="checkbox" value="inspectionList.IsRejected" id="checkbox"
+							style="width: 2em;
 							 height: 2em;
 							 border-style: solid;
-							 border-width: 5px; margin-left: 15px;"	[checked]="inspectionList.IsRejected == true" (click)="display=true; sendReject($event,inspectionList.Id)">
-						</td>	
-						<td >
-							
-							<span class="myDIV"> {{inspectionList.AddressLine1.slice(0, 10)}}<br></span>
-								<span class="hide">{{inspectionList.AddressLine1.substr(10)}}</span>
-						</td>
-						<!-- <td *ngIf="showFullAddress">
+							 border-width: 5px; margin-left: 15px;"
+							 [checked]="inspectionList.IsRejected"
+							(click)="RejectionReson(inspectionList)">
+					</td>
+					<td>
+
+						<span class="myDIV"> {{inspectionList.AddressLine1.slice(0, 10)}}<br></span>
+						<span class="hide">{{inspectionList.AddressLine1.substr(10)}}</span>
+					</td>
+					<!-- <td *ngIf="showFullAddress">
 							
 							 {{inspectionList.AddressLine1}}
 						</td> -->
-						<td>
-							{{inspectionList.PermitNo }}
-						</td>
-						<td>
-							<p-calendar  [(ngModel)] = "inspectionList.InspectionDate" 
-                             dateFormat="mm/dd/yy" [showIcon]="true" (onSelect)="saveDate($event,inspectionList.Id)"
-							 >  </p-calendar>    
-							<!-- {{inspectionList.InspectionDate | date: 'MM/dd/yyyy'}} -->
-						</td>
-						<td>
-							<p-dropdown [options]="userList" optionLabel="Name" optionValue="Name"
-										[(ngModel)]="inspectionList.InspectorName" (onChange)="saveInspector($event,inspectionList.Id); " (click)="viewAddress(inspectionList.Id)"
-										></p-dropdown>
-							<!-- {{inspectionList.InspectorName}} -->
-						</td>
-						<td  >
-							
-							<!-- <p-selectButton  [options]="time" [(ngModel)]="inspectionList.AmPm"  optionValue="value" 
+					<td>
+						{{inspectionList.PermitNo }}
+					</td>
+					<td>
+						<p-calendar [(ngModel)]="inspectionList.InspectionDate" dateFormat="mm/dd/yy" [showIcon]="true"
+							(onSelect)="saveDate($event,inspectionList.Id)"> </p-calendar>
+						<!-- {{inspectionList.InspectionDate | date: 'MM/dd/yyyy'}} -->
+					</td>
+					<td>
+						<p-dropdown [options]="userList" optionLabel="Name" optionValue="Name" appendTo="body"
+							[(ngModel)]="inspectionList.InspectorName"></p-dropdown>
+						<!-- {{inspectionList.InspectorName}} -->
+					</td>
+					<td>
+
+						<!-- <p-selectButton  [options]="time" [(ngModel)]="inspectionList.AmPm"  optionValue="value" 
 							(onChange)=saveTime($event,inspectionList.Id) ></p-selectButton> -->
-							
-							<p-selectButton [options]="time" [(ngModel)]="inspectionList.AmPm" optionValue="value" optionLabel="label"
-                			(onChange)="saveTime($event, inspectionList.Id)"></p-selectButton>
-						</td>
-						<!-- <td  *ngIf="!isInspector">
+
+						<p-selectButton [options]="time" [(ngModel)]="inspectionList.AmPm" optionValue="value"
+							optionLabel="label" (onChange)="saveTime($event, inspectionList.Id)"></p-selectButton>
+					</td>
+					<!-- <td  *ngIf="!isInspector">
 							{{inspectionList.AmPm }}
 						</td> -->
-						
-						
-						<td>
-							{{inspectionList.InspectionType1}}
-						</td>
-						
-						<td>
-							{{inspectionList.InspectionType2 }}
-						</td>
-						
-						<td>
-							{{inspectionList.InspectionType3 }}
-						</td>
-						
-						<td>
-							{{inspectionList.InspectionType4}}
-						</td>
-						<td>
-							{{inspectionList.Comments}}
-						</td>
-                        
-						
-							
-						
-				
-					</tr>
-				</ng-template>
-			
-				
-    		</p-table>
-		
+
+
+					<td>
+						{{inspectionList.InspectionType1}}
+					</td>
+
+					<td>
+						{{inspectionList.InspectionType2 }}
+					</td>
+
+					<td>
+						{{inspectionList.InspectionType3 }}
+					</td>
+
+					<td>
+						{{inspectionList.InspectionType4}}
+					</td>
+					<td>
+						{{inspectionList.Comments}}
+					</td>
+
+
+
+
+
+				</tr>
+			</ng-template>
+
+
+		</p-table>
+<button pButton icon="pi"  label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
+			class="p-button-outlined"></button> 
+		&nbsp;	
+			<button pButton icon="pi"  label="Reject Requests" (click)="editInspctionReject()"
+			class="p-button-outlined"></button>
 	</div>
 </div>
 
-<p-dialog header="Reject " [(visible)]="display" [modal]="true" showEffect="fade" [style]="{width: '30vw'}" [breakpoints]="{'960px': '75vw'}">
+<p-dialog header="Reject " [(visible)]="display" [modal]="true" showEffect="fade" [style]="{width: '30vw'}"
+	[breakpoints]="{'960px': '75vw'}">
 	<p class="line-height-3 m-0">
 		<Label>Comments : </Label><br>
-		<textarea rows="4" cols="55" [(ngModel)] = "inspectionModel.RejectionComments" pInputTextarea></textarea>
+		<textarea rows="4" cols="55" [(ngModel)]="inspectionModel.RejectionComments" pInputTextarea></textarea>
 	</p>
 	<ng-template pTemplate="footer">
-			<button pButton icon="pi pi-check" (click)="rejectValue()" label="Save" class="p-button-outlined"></button>
+		<button pButton icon="pi pi-check" (click)="Rejection(inspectionModel)" label="Save"
+			class="p-button-outlined"></button>
 	</ng-template>
 </p-dialog>
-

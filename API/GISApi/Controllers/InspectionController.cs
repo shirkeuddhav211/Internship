@@ -136,6 +136,33 @@ IInspectionService inspectionService, ILogger<UsersController> logger, RoleManag
                 return null;
             }
         }
+        [HttpPut]
+        [Route("EditInspectionDetail")]
+        [EnableCors("AllowSpecificOrigin")]
+        public async Task<ActionResult> EditInspectionDetail()
+        {
+            try
+
+
+            {
+                string jsonString = HttpContext.Request.Form["InspectionDetail"]; 
+
+                // Deserialize the JSON string to a list of InspctionViewModel objects
+                List<InspctionViewModel> inspectionDetails = JsonConvert.DeserializeObject<List<InspctionViewModel>>(jsonString);
+                // List<InspctionViewModel> inspectiondDetail = JsonConvert.DeserializeObject<InspctionViewModel>(HttpContext.Request.Form["InspectionDetail"]);
+                var result = await _inspectionService.EditInspectionack(inspectionDetails);
+
+                //var insp = _GlobalDBContext.Inspections.Where(x => x.InspectionOrder == inspectiondDetail.InspectionOrder).FirstOrDefault();
+                //return Ok(insp.Id.ToString());
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error occured in [InspectionController] - GetInspectionList() Exception is : " + ex);
+                return null;
+            }
+        }
 
         [HttpGet]
         [Route("GetInspectionDetailsById")]

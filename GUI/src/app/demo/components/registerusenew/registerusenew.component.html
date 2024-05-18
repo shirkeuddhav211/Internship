@@ -17,7 +17,7 @@
                         <div class="field col-12 md:col-4 allpadding">
                             <label class="lableshow" htmlFor="email2">UserName/Email</label>
                             <input pInputText id="email2" type="email" [(ngModel)]="Register.Email"
-                                (change)="onEmailChange(Register.Email)" [readOnly]="isEdit == '1'" required />
+                                (change)="onEmailChange(Register.Email)" readOnly="isEdit == '1'" required />
                         </div>
                         <!-- <div class="field col-12 md:col-4 allpadding">
                         <label class="lableshow" htmlFor="firstname2">User Name</label>
