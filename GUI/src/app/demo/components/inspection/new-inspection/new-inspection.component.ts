@@ -330,7 +330,7 @@ export class NewInspectionComponent {
         this.spinner.show();
         this.spinner.hide();
         this.toastr.success("Inspection saved successfully.", 'Information');
-       this.route.navigate(["/app/inspectionformlist"])
+        this.route.navigate(["/app/inspectionformlist"])
         // .then(() => {
         //   this.router.navigate(['/app/inspecform'], {
         //     queryParams: {
@@ -350,7 +350,7 @@ export class NewInspectionComponent {
   }
 
   Inspction(event: Event, inspection: Inspection) {
-    
+
     if (inspection.InspectorName == null) {
       this.toastr.error("Please Select Inspector ", 'Error');
       inspection.Acknowledge = false;
@@ -379,6 +379,11 @@ export class NewInspectionComponent {
     }
   }
   Rejection(inspection: Inspection) {
+    if (inspection.RejectComments == "" || inspection.RejectComments == null) {
+      this.toastr.error("Please Enter Reject Comments ", 'Error');
+      return;
+    }
+
     if (inspection.IsRejected == false || inspection.IsRejected == null) {
       inspection.Acknowledge = false;
       inspection.IsRejected = true;
