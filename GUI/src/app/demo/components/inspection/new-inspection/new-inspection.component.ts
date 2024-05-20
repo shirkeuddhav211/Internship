@@ -298,81 +298,99 @@ export class NewInspectionComponent {
   }
 
   editInspctionAcknowledge() {
-   this.inspectionListEdit = this.inspectionList.filter(x => x.Acknowledge == true);
+    this.inspectionListEdit = this.inspectionList.filter(x => x.Acknowledge == true);
     console.log("editInspctionAcknowledge")
     this.inspectionTypeService.EditInspectionDetail(this.inspectionListEdit).subscribe(
       (response) => {
-        this.spinner.show();        
-          this.spinner.hide();
-          this.toastr.success("Inspection saved successfully.",'Information');
-          this.route.navigate(["/app/inspectionformlist"])
-          // .then(() => {
-          //   this.router.navigate(['/app/inspecform'], {
-          //     queryParams: {
-          //       inspectionId: +response,
-          //       isEdit: 1,               
-          //       isView: 0
-          //     }
-          //   });
-          // });
-          //this.router.navigate(["/app/inspectionlist"]);
+        this.spinner.show();
+        this.spinner.hide();
+        this.toastr.success("Inspection saved successfully.", 'Information');
+        this.route.navigate(["/app/inspectionformlist"])
+        // .then(() => {
+        //   this.router.navigate(['/app/inspecform'], {
+        //     queryParams: {
+        //       inspectionId: +response,
+        //       isEdit: 1,               
+        //       isView: 0
+        //     }
+        //   });
+        // });
+        //this.router.navigate(["/app/inspectionlist"]);
       },
       (error) => {
-        this.toastr.error("Inspection saved failed",'Error');
+        this.toastr.error("Inspection saved failed", 'Error');
       }
     );
   }
   editInspctionReject() {
     this.inspectionListEdit = this.inspectionList.filter(x => x.IsRejected == true);
     console.log("editInspctionReject")
-      this.inspectionTypeService.EditInspectionDetail(this.inspectionListEdit).subscribe(
-        (response) => {
-          this.spinner.show();        
-            this.spinner.hide();
-            this.toastr.success("Inspection saved successfully.",'Information');
-           // this.router.navigate(["/app/inspectionformlist"])
-            // .then(() => {
-            //   this.router.navigate(['/app/inspecform'], {
-            //     queryParams: {
-            //       inspectionId: +response,
-            //       isEdit: 1,               
-            //       isView: 0
-            //     }
-            //   });
-            // });
-            //this.router.navigate(["/app/inspectionlist"]);
-        },
-        (error) => {
-          this.toastr.error("Inspection saved failed",'Error');
-        }
-      );
-    
+    this.inspectionTypeService.EditInspectionDetail(this.inspectionListEdit).subscribe(
+      (response) => {
+        this.spinner.show();
+        this.spinner.hide();
+        this.toastr.success("Inspection saved successfully.", 'Information');
+       this.route.navigate(["/app/inspectionformlist"])
+        // .then(() => {
+        //   this.router.navigate(['/app/inspecform'], {
+        //     queryParams: {
+        //       inspectionId: +response,
+        //       isEdit: 1,               
+        //       isView: 0
+        //     }
+        //   });
+        // });
+        //this.router.navigate(["/app/inspectionlist"]);
+      },
+      (error) => {
+        this.toastr.error("Inspection saved failed", 'Error');
+      }
+    );
+
   }
 
-  Inspction(inspection: Inspection) {
-    var test = this.inspectionList.filter(x => x.Id == inspection.Id);
+  Inspction(event: Event, inspection: Inspection) {
+    
     if (inspection.InspectorName == null) {
       this.toastr.error("Please Select Inspector ", 'Error');
       inspection.Acknowledge = false;
+      inspection.IsRejected = false;
+      event.preventDefault();
       return;
     }
-    else {
+    else if (inspection.InspectorName != null && (inspection.Acknowledge == false || inspection.Acknowledge == null)) {
       inspection.Acknowledge = true;
       inspection.IsRejected = false;
+    }
+    else if (inspection.Acknowledge == true) {
+      inspection.Acknowledge = false;
+
     }
     console.log("Inspction")
   }
   RejectionReson(inspection: Inspection) {
     this.inspectionModel = inspection;
-    if(inspection.IsRejected == false || inspection.IsRejected == null ){
-    this.display = true;
+
+    if (inspection.IsRejected == true) {
+      inspection.IsRejected = false;
+    }
+    else if (inspection.IsRejected == false || inspection.IsRejected == null) {
+      this.display = true;
     }
   }
   Rejection(inspection: Inspection) {
-    inspection.Acknowledge = false;
-    inspection.IsRejected = true;
-    this.display = false;
-    console.log(inspection.RejectionComments);
+    if (inspection.IsRejected == false || inspection.IsRejected == null) {
+      inspection.Acknowledge = false;
+      inspection.IsRejected = true;
+      this.display = false;
+      console.log(inspection.RejectionComments);
+    }
+    else if (inspection.IsRejected == true) {
+      inspection.IsRejected = false;
+
+
+    }
+
   }
 
 }
