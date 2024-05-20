@@ -30,7 +30,12 @@ export class NoticeComponent {
   GetNoticeList() {
     this.notice=[];
     this.noticeService.GetNoticeList().subscribe((response: Notice[]) => {
-      this.notice = response;
+      //this.notice = response;
+      response.forEach((notice, index) => {
+        if (index === 0) {
+          this.notice.push(notice); // Assign the first element of the response array to this.notice
+        }
+      });      
     },
     (error:any)=> {
       this.toastr.error('Error while fetching Notice', 'Error');
