@@ -221,7 +221,13 @@
                         style="color: var(--secondary-color)">Register Account</a>
                     </div> 
                 </div>
-                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>         
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> 
+                <div class="p-fluid p-formgrid grid" style="padding-top: 20px;">
+                    <div class="field col-12">
+                        <a class="font-medium no-underline ml-2 text-right" 
+                        style="color: var(--secondary-color)">Notice:{{noticeTxt}}</a>
+                    </div> 
+                </div>          
             </div>
         </div>
         <div class="col-md-4"> </div>   

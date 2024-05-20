@@ -80,48 +80,55 @@
 						pSortableColumn="Acknlowledge" *ngIf="this.userRole !== 'Resident'">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Acknlowledge<p-sortIcon field="Acknlowledge" style="padding-left: 3px;"></p-sortIcon>
+							Acknlowledge
+							<!-- <p-sortIcon field="Acknlowledge" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="Reject" *ngIf="this.userRole !== 'Resident'">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Reject<p-sortIcon field="Reject" style="padding-left: 3px;"></p-sortIcon>
+							Reject
+							<!-- <p-sortIcon field="Reject" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 9rem; background-color: #F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="AddressLine1">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important; ">
-							Address<p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon>
+							Address
+							<!-- <p-sortIcon field="AddressLine1" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="PermitNo">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Permit#<p-sortIcon cfield="PermitNo" style="padding-left: 3px;"></p-sortIcon>
+							Permit#
+							<!-- <p-sortIcon cfield="PermitNo" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 9rem;background-color: #F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="InspectionDate">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Date<p-sortIcon field="Date" style="padding-left: 3px;"></p-sortIcon>
+							Date
+							<!-- <p-sortIcon field="Date" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 11rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="Inspector">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Inspector<p-sortIcon field="Inspector" style="padding-left: 3px;"></p-sortIcon>
+							Inspector
+							<!-- <p-sortIcon field="Inspector" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 7rem;background-color:#F0A1F9;color: rgb(22, 22, 21);" pSortableColumn="AmPm">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							AM/PM<p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon>
+							AM/PM
+							<!-- <p-sortIcon field="AmPM" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 
@@ -131,7 +138,8 @@
 						pSortableColumn="InspectionType1">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Inspection1<p-sortIcon field="Inspection1" style="padding-left: 3px;"></p-sortIcon>
+							Inspection1
+							<!-- <p-sortIcon field="Inspection1" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 
@@ -139,7 +147,8 @@
 						pSortableColumn="InspectionType2">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Inspection2<p-sortIcon field="Inspection2" style="padding-left: 3px;"></p-sortIcon>
+							Inspection2
+							<!-- <p-sortIcon field="Inspection2" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 
@@ -147,7 +156,8 @@
 						pSortableColumn="InspectionType3">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Inspection3<p-sortIcon field="Inspection3" style="padding-left: 3px;"></p-sortIcon>
+							Inspection3
+							<!-- <p-sortIcon field="Inspection3" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 
@@ -155,14 +165,16 @@
 						pSortableColumn="InspectionType4">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Inspection4<p-sortIcon field="Inspection4" style="padding-left: 3px;"></p-sortIcon>
+							Inspection4
+							<!-- <p-sortIcon field="Inspection4" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 					<th style="min-width: 9rem;background-color:#F0A1F9;color: rgb(22, 22, 21);"
 						pSortableColumn="Comments">
 						<div class="flex justify-content-between align-items-center"
 							style="display: inline-flex !important;">
-							Comments<p-sortIcon field="Comments" style="padding-left: 3px;"></p-sortIcon>
+							Comments
+							<!-- <p-sortIcon field="Comments" style="padding-left: 3px;"></p-sortIcon> -->
 						</div>
 					</th>
 
@@ -255,10 +267,10 @@
 
 
 		</p-table>
-		<button pButton icon="pi" label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
-			class="p-button-outlined"></button>
-		&nbsp;
-		<button pButton icon="pi" label="Reject Requests" (click)="editInspctionReject()"
+<button pButton icon="pi"  label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
+			class="p-button-outlined " style="border-color: #F0A1F9; color: #6e087a;"></button> 
+		&nbsp;	
+			<button pButton icon="pi"  label="Reject Requests "  style="border-color: #F0A1F9; color: #6e087a;" (click)="editInspctionReject()"
 			class="p-button-outlined"></button>
 	</div>
 </div>

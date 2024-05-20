@@ -36,13 +36,13 @@
 						<div class="row">
 							<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
 								<Label style="font-weight: 100;">Inspection Date From </Label><br>
-								<p-calendar [(ngModel)]="this.fromDate" dateFormat="mm/dd/yy" [showIcon]="true"
+								<p-calendar [(ngModel)]="this.fromDate" dateFormat="mm/dd/yy" [showIcon]="true" [icon]="fa-clock"
 									Style="height: 1cm; width: 5cm; "> </p-calendar>
 								&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm; width: 5cm; " [(ngModel)]="this.fromDate">&nbsp; -->
 							</div>
 							<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
 								<Label style="font-weight: 100;" class="l1">To </Label><br>
-								<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true"
+								<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true" [iconDisplay]="'input'" 
 									Style="height: 1cm; width: 5cm; "> </p-calendar>
 								&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm;  width: 5cm; " [(ngModel)]="this.toDate"> -->
 							</div>
