@@ -179,20 +179,17 @@
 					border-width: 1px;
 					border-style: double;">
 
-					<td *ngIf="this.userRole !== 'Resident'"><input class="form-check-input " type="checkbox"
-							value="inspection.Acknowledge" id="checkbox" (click)="Inspction(inspectionList)" style="width: 2em;
-							height: 2em;
-							border-style: solid;
-							border-width: 5px; margin-left: 20px;" 
+					<td *ngIf="this.userRole !== 'Resident'"> <input class="form-check-input" type="checkbox"
+							id="Acknowledge" name="inspectionList.Acknowledge"
+							(click)="Inspction($event,inspectionList)"
+							style="width: 2em; height: 2em; border-style: solid; border-width: 5px; margin-left: 20px;"
 							[checked]="inspectionList.Acknowledge" [binary]="true">
-					</td>
 					<td *ngIf="this.userRole !== 'Resident'">
-						<input class="form-check-input " type="checkbox" value="inspectionList.IsRejected" id="checkbox"
-							style="width: 2em;
+						<input class="form-check-input " type="checkbox" value="inspectionList.IsRejected"
+							id="IsRejected" style="width: 2em;
 							 height: 2em;
 							 border-style: solid;
-							 border-width: 5px; margin-left: 15px;"
-							 [checked]="inspectionList.IsRejected"
+							 border-width: 5px; margin-left: 15px;" [checked]="inspectionList.IsRejected"
 							(click)="RejectionReson(inspectionList)">
 					</td>
 					<td>
@@ -258,10 +255,10 @@
 
 
 		</p-table>
-<button pButton icon="pi"  label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
-			class="p-button-outlined"></button> 
-		&nbsp;	
-			<button pButton icon="pi"  label="Reject Requests" (click)="editInspctionReject()"
+		<button pButton icon="pi" label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
+			class="p-button-outlined"></button>
+		&nbsp;
+		<button pButton icon="pi" label="Reject Requests" (click)="editInspctionReject()"
 			class="p-button-outlined"></button>
 	</div>
 </div>
