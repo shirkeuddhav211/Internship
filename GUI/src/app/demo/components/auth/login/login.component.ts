@@ -6,6 +6,8 @@ import { AuthenticationService } from 'src/app/_services/authentication.service'
 import { el } from '@fullcalendar/core/internal-common';
 import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs';
+import { NoticeService } from '../../notice/notice.service';
+import { Notice } from '../../notice/noticemodel';
 
 
 @Component({
@@ -23,16 +25,22 @@ import { first } from 'rxjs';
 export class LoginComponent {
 
     constructor(private router:Router , public layoutService: LayoutService,
-      public authenticateservice: AuthenticationService,
+      public authenticateservice: AuthenticationService, public noticeService:NoticeService,
       private toastr: ToastrService,){
 
     }
       login = new LoginModel()
       user:any
-    
+      notice : Notice[];
+      noticeTxt: string =""
+      
       display:boolean = true
       isForgotPassword: boolean = false;
       error = "";
+
+  ngOnInit(){
+     this.GetNoticeList();
+     }
 
   onSubmit(){
     this.login.username = this.login.username.toLowerCase()
@@ -89,5 +97,17 @@ export class LoginComponent {
 
   residentsignup(){
     this.router.navigate(["/residentuser"]);
+  }
+
+  GetNoticeList() {
+    this.notice=[];
+    this.noticeService.GetNoticeList().subscribe((response: Notice[]) => {
+      this.notice = response;
+      this.noticeTxt=this.notice[0].Notice1
+    },
+    (error:any)=> {
+      this.toastr.error('Error while fetching Notice', 'Error');
+      //this.spinner.hide();
+    });
   }
 }

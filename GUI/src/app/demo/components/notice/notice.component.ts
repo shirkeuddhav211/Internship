@@ -67,7 +67,7 @@ deleteNotice(id:number) {
         this.toastr.success('There was some error deleting the record. Please try again later.');
       }
       else if (response.statusText === "Exists") {
-        this.toastr.error('Notice not deleted. It is attached to a Inspection Type');
+        this.toastr.error('Notice not deleted. It is attached to a Notice');
       }
       else {
         this.toastr.success('Notice deleted successfully');
