@@ -27,6 +27,7 @@ export class NoticeComponent {
     this.GetNoticeList();
   }
 
+
   GetNoticeList() {
     this.notice=[];
     this.noticeService.GetNoticeList().subscribe((response: Notice[]) => {
