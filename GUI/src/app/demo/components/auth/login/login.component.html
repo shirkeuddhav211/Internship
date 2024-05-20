@@ -199,33 +199,37 @@
                     </div>
                 </div>
                  
-                <div class="p-fluid p-formgrid grid">
-                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="forgotPassword()"
+                <div class="p-fluid p-formgrid grid" style="display: inline-block; float: left; ">
+                    <div class="field col-12 md:col-12" *ngIf="!isForgotPassword">
+                        <a class="font-medium no-underline  text-right cursor-pointer" (click)="forgotPassword()"
                         style="color: var(--secondary-color)">Forgot password?</a>
                                                                   
                     </div>  
-                    <div class="field col-12 md:col-4"></div>   
-                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
-                        <button pButton  label="Login" style="background-color: #6e087a" class="mt-2"  (click)="onSubmit()"></button>
-                        <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
-
-                    </div>  
-                    <div class="field col-12 md:col-4" *ngIf="isForgotPassword">
-                        <p-button label="Submit" class="mt-2"  (click)="onSubmit()"></p-button>
+                    <!-- <div class="field col-12 md:col-4"></div>    -->
+                 
+                    <div class="field col-12 md:col-12"  *ngIf="isForgotPassword">
+                        <p-button label="Submit" class=""  (click)="onSubmit()"></p-button>
                     </div>                    
                 </div> 
-                <div class="p-fluid p-formgrid grid">
-                    <div class="field col-12 md:col-4">
+                <div class="p-fluid p-formgrid grid"  style="display: inline-block; float: right;">
+                    <div class="field col-12 md:col-12">
                         <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="residentsignup()"
                         style="color: var(--secondary-color)">Register Account</a>
                     </div> 
                 </div>
+                
+                <div>
+                    <div class="field col-12 md:col-12" *ngIf="!isForgotPassword">
+                        <button pButton  label="Login" style="background-color: #6e087a" class=""  (click)="onSubmit()"></button>
+                        <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
+
+                    </div>  
+                </div>
                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> 
-                <div class="p-fluid p-formgrid grid" style="padding-top: 20px;">
+                <div class="p-fluid p-formgrid grid" style="padding-top: 2px;">
                     <div class="field col-12">
-                        <a class="font-medium no-underline ml-2 text-right" 
-                        style="color: var(--secondary-color)">Notice:{{noticeTxt}}</a>
+                        <a class="font-medium no-underline  text-right" 
+                        style="color: var(--secondary-color)">Notice:<br>{{noticeTxt}}</a>
                     </div> 
                 </div>          
             </div>
