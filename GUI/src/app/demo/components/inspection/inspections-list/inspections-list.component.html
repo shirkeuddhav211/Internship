@@ -42,7 +42,7 @@
 							</div>
 							<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
 								<Label style="font-weight: 100;" class="l1">To </Label><br>
-								<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true" [iconDisplay]="'input'" 
+								<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true" [icon]="fa-clock" 
 									Style="height: 1cm; width: 5cm; "> </p-calendar>
 								&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm;  width: 5cm; " [(ngModel)]="this.toDate"> -->
 							</div>
@@ -273,8 +273,8 @@
 								<!-- <button *ngIf="!isResient" pButton class="btn btn-warning" icon="pi pi-pencil"
 									(click)="OnEdit(inspectionList.Id)"
 									style="display: inline-flex; padding: 3px; color: white;"></button> -->
-								<i (click)="OnDelete(inspectionList.Id)" class="pi pi-trash"
-									style="color: red; font-size: 20px;"></i>
+								<!-- <i (click)="OnDelete(inspectionList.Id)" class="pi pi-trash"
+									style="color: red; font-size: 20px;"></i> -->
 
 								<!-- <button class="btn btn-warning" style="margin-right: 10px;" (click)="OnEdit(inspectionList.Id)" icon="pi-pencil">
 								</button> -->&nbsp;
@@ -401,7 +401,7 @@
 							&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm; width: 5cm; " [(ngModel)]="this.fromDate">&nbsp; -->
 						</div>
 						<div class="col-md-3 col3" *ngIf="this.userRole !== 'Staff'">
-							<Label style="font-weight: 100;" class="l1">To </Label><br>
+							<Label style="font-weight: 100;">To </Label><br>
 							<p-calendar [(ngModel)]="this.toDate" dateFormat="mm/dd/yy" [showIcon]="true"
 								Style="height: 1cm; width: 5cm; "> </p-calendar>
 							&nbsp;<!-- <input type="date" id="date" name="date" Style="height: 1cm;  width: 5cm; " [(ngModel)]="this.toDate"> -->
