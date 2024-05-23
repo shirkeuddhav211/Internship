@@ -74,7 +74,9 @@
 					border-style: double;">
                         <td>{{notice.Notice1}}</td>                       
                         <td>
-							<button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(notice.Id)" style="display: inline-flex; padding: 3px; color: white;"></button>					
+							<i class="btn btn-warning" class="pi pi-file-edit"
+							style="color: #306235; font-size: 20px; cursor: pointer;" (click)="OnEdit(notice.Id)"></i>	
+							<!-- <button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(notice.Id)" style="display: inline-flex; padding: 3px; color: white;"></button>					 -->
 
                             <!-- <button class="btn btn-warning" style="margin-right: 10px;" (click)="OnEdit(notice.Id)">Edit</button>  -->
                             <!-- &nbsp;<button pButton class="btn btn-danger " icon="pi pi-trash" (click)="deleteNotice(notice.Id)" style="display: inline-flex;padding: 3px;"></button> -->

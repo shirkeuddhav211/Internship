@@ -89,10 +89,11 @@
 						
 									 
                         <td>
-							<button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(inspectiontypes.Id)" style="display: inline-flex; padding: 3px; color: white;"></button>					
-
+							<!-- <button pButton  class="btn btn-warning" icon="pi pi-pencil" (click)="OnEdit(inspectiontypes.Id)" style="display: inline-flex; padding: 3px; color: white;"></button>					 -->
+							<i class="btn btn-warning" class="pi pi-file-edit"
+							style="color: #306235; font-size: 20px; cursor: pointer;" (click)="OnEdit(inspectiontypes.Id)"></i>	
                             <!-- <button class="btn btn-warning" style="margin-right: 10px;" (click)="OnEdit(inspectiontypes.Id)">Edit</button>  -->
-                            &nbsp;<button pButton class="btn btn-danger " icon="pi pi-trash" (click)="deleteInspectionType(inspectiontypes.Id)" style="display: inline-flex;padding: 3px;"></button>
+                            <!-- &nbsp;<button pButton class="btn btn-danger " icon="pi pi-trash" (click)="deleteInspectionType(inspectiontypes.Id)" style="display: inline-flex;padding: 3px;"></button> -->
 							 <!-- <button class="btn btn-danger " (click)="deleteInspectionType(inspectiontypes.Id)">Delete</button> -->
                         </td>
                       </tr>
