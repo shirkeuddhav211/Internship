@@ -37,27 +37,27 @@
 
 <style>
     .main{
-        
-    font-family: Segoe UI, Helvetica, Arial, sans-serif;
-    color: #444444;
-    width: 100%;
-    height: 100%;
-    background-color: #eae3da;
+
+        font-family: Segoe UI, Helvetica, Arial, sans-serif;
+        color: #444444;
+        width: 100%;
+        height: 100%;
+        background-color: #eae3da;
     }
 
 
     .banner {
-    background-color: #eae3da;
-    background-image: url(https://its.cforms.net/Content/themes/Buena/images/BuenaPark.png);
-    background-repeat: no-repeat;
-    background-size: contain; /* This ensures the entire image fits within the container */
-    background-position : center top;
-    width: 100%;
-    height: 2cm;
-    position: relative;
-    top: 0px;
-    left: 0px;
-}
+        background-color: #eae3da;
+        background-image: url(https://its.cforms.net/Content/themes/Buena/images/BuenaPark.png);
+        background-repeat: no-repeat;
+        background-size: contain; /* This ensures the entire image fits within the container */
+        background-position : center top;
+        width: 100%;
+        height: 2cm;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
 
     .wapper{
         /* background-color: #bbb9b6;
@@ -65,16 +65,16 @@
     border-radius: 56px;
     padding: 0.3rem;
     width: 90%; */
-    width: 90%;
-    display: block;
-    text-align: center;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 15px;
-    border-color: #C3C0BD;
-    border-style: solid;
-    background-color: #ffffff;
+        width: 90%;
+        display: block;
+        text-align: center;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 15px;
+        border-color: #C3C0BD;
+        border-style: solid;
+        background-color: #ffffff;
     }
 </style>
 <!-- <div class="main">
@@ -173,16 +173,16 @@
 </p-dialog> -->
 <!-- #6e087a -->
 
-<div class="login-screen">  
+<div class="login-screen">
     <div class="p-fluid p-formgrid grid">
         <!-- #F0A1F9;color: rgb(22, 22, 21); -->
         <div class="col-md-4"> </div>
-        <div class="col-md-4" style="padding-top: 100px;">           
+        <div class="col-md-4" style="padding-top: 100px;">
             <div style="background-color: white; width: 100%; border: 15px solid white;  
-                 margin: 20px;">  
+                 margin: 20px;">
                 <div style="background-color: #6e087a; padding-top: 10px; padding-bottom: 5px;">
                     <h4 style=" color: white; text-align: center;">Inspection Tracking System</h4>
-                </div>              
+                </div>
                 <div style="padding: 10px;">
                     <div class="col-md-12" style="font-weight: bold;text-align: center; ">Welcome!</div>
                     <div class="p-fluid p-formgrid grid">
@@ -194,44 +194,48 @@
                     <div class="p-fluid p-formgrid grid" *ngIf="!isForgotPassword">
                         <div class="field col-12 md:col-12">
                             <label for="password">Password</label>
-                            <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>                              
-                        </div>                            
+                            <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>
+                        </div>
                     </div>
                 </div>
-                 
-                <div class="p-fluid p-formgrid grid">
-                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="forgotPassword()"
-                        style="color: var(--secondary-color)">Forgot password?</a>
-                                                                  
-                    </div>  
-                    <div class="field col-12 md:col-4"></div>   
-                    <div class="field col-12 md:col-4" *ngIf="!isForgotPassword">
-                        <button pButton  label="Login" style="background-color: #6e087a" class="mt-2"  (click)="onSubmit()"></button>
-                        <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
 
-                    </div>  
-                    <div class="field col-12 md:col-4" *ngIf="isForgotPassword">
-                        <p-button label="Submit" class="mt-2"  (click)="onSubmit()"></p-button>
-                    </div>                    
-                </div> 
-                <div class="p-fluid p-formgrid grid">
-                    <div class="field col-12 md:col-4">
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" (click)="residentsignup()"
-                        style="color: var(--secondary-color)">Register Account</a>
-                    </div> 
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4" *ngIf="!isForgotPassword">
+                        <button pButton label="Login" style="background-color: #6e087a; color: #ffffff;" class="mt-2"
+                            (click)="onSubmit()"></button>
+                        <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
+                    </div>
                 </div>
-                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> 
-                <div class="p-fluid p-formgrid grid" style="padding-top: 2px;">
+                <div class="row col-12">
+                    <div class="p-fluid p-formgrid grid">
+                        <div class="col" *ngIf="!isForgotPassword">
+                            <a class="font-medium no-underline ml-2 text-right cursor-pointer"
+                                (click)="forgotPassword()" style="color: var(--secondary-color)">Forgot password?</a>
+                        </div>
+                        <div class="col-4" *ngIf="isForgotPassword">
+                            <p-button label="Submit" class="mt-2" (click)="onSubmit()"></p-button>
+                        </div>
+                        <div class="col-4">
+                            <a class="font-medium no-underline ml-2 text-right cursor-pointer"
+                                (click)="residentsignup()" style="color: var(--secondary-color)">Register Account</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                <div class="p-fluid p-formgrid grid" style="padding-top: 20px;">
                     <div class="field col-12">
-                        <a class="font-medium no-underline ml-2 text-right" 
-                        style="color: var(--secondary-color)">Notice:{{noticeTxt}}</a>
-                    </div> 
-                </div>          
+                        <a class="font-medium no-underline ml-2 text-right"
+                            style="color: var(--secondary-color)">Notice:</a>
+                        <br>
+                        <a class="font-medium no-underline ml-2 text-right"
+                            style="color: var(--secondary-color)">{{noticeTxt}}</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-4"> </div>   
+        <div class="col-md-4"> </div>
     </div>
-    
-   
-</div>

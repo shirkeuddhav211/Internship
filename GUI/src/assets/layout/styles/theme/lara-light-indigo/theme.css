@@ -1970,9 +1970,9 @@
     border-color: #F0A1F9;
   }
   .p-button:not(:disabled):active {
-    background: #4338CA;
-    color: #ffffff;
-    border-color: #4338CA;
+    background: #F0A1F9;
+    color: #4b5563;
+    border-color: #F0A1F9;
   }
   .p-button.p-button-outlined {
     background-color: transparent;

@@ -84,7 +84,7 @@
 							 {{inspectiontypes.IsActive == true?"Yes":"No"}} 
 						</td>  -->  
 						<td>
-							<input class="form-check-input mt-2" type="checkbox" id="checkbox" [checked]="inspectiontypes.IsActive" disabled>
+							<input class="form-check-input mt-2" type="checkbox" id="checkbox" [checked]="inspectiontypes.IsActive" (click)="saveInspection(inspectiontypes)">
 						</td>
 						
 									 

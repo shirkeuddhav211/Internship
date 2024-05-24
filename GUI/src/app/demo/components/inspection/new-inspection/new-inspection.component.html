@@ -267,11 +267,16 @@
 
 
 		</p-table>
-<button pButton icon="pi"  label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
-			class="p-button-outlined " style="border-color: #F0A1F9; color: #6e087a;"></button> 
-		&nbsp;	
-			<button pButton icon="pi"  label="Reject Requests "  style="border-color: #F0A1F9; color: #6e087a;" (click)="editInspctionReject()"
-			class="p-button-outlined"></button>
+		<div class="row justify-content-center">
+            <div class="col-md-4">
+				<button pButton icon="pi"  label="Acknowledge Requests" (click)="editInspctionAcknowledge()"
+				class="p-button-outlined " style="border-color: #F0A1F9; color: black; background-color:  #F0A1F9;"></button> 
+&nbsp;
+
+				<button pButton icon="pi"  label="Reject Requests "  style="border-color: #F0A1F9;  color: black; background-color:  #F0A1F9;" (click)="editInspctionReject()"
+				class="p-button-outlined"></button>
+			</div>
+		</div>
 	</div>
 </div>
 
