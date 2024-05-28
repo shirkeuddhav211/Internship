@@ -36,6 +36,7 @@ namespace GISApi.Services
                 insp.Id = model.Id;
                 insp.InspectionTypeName = model.InspectionTypeName;
                 insp.IsActive = model.IsActive;
+                insp.InspectionVideo = model.InspectionVideo;
                 var resuil = _GlobalDBContext.InspectionTypes.Add(insp);
                 _GlobalDBContext.SaveChanges();
                 return insp;
@@ -55,6 +56,7 @@ namespace GISApi.Services
 
                 resultUpdate.InspectionTypeName = model.InspectionTypeName;
                 resultUpdate.IsActive = model.IsActive;
+                resultUpdate.InspectionVideo = model.InspectionVideo;
 
                 var result = _GlobalDBContext.InspectionTypes.Update(resultUpdate);
                 await _GlobalDBContext.SaveChangesAsync();
@@ -80,7 +82,8 @@ namespace GISApi.Services
                                    {
                                        Id = dataList.Id,
                                        InspectionTypeName = dataList.InspectionTypeName,
-                                       IsActive = dataList.IsActive
+                                       IsActive = dataList.IsActive,
+                                       InspectionVideo = dataList.InspectionVideo ?? false
 
                                    }).OrderBy(x => x.InspectionTypeName).ToListAsync();
                     return result;

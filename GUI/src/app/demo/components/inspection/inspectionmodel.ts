@@ -1,5 +1,6 @@
 export class InspectionTypes{
     Id:number;
     InspectionTypeName:string;
-    IsActive:boolean
+    IsActive:boolean;
+    InspectionVideo:boolean;
 }

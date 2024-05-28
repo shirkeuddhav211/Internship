@@ -22,6 +22,7 @@ import { HolidayService } from '../../../holidaymaster/holiday.service';
 export class InspectionaddeditComponent {
   inspectionInfo= new Inspection()
   inspectiontypes : InspectionTypes[];
+  activeInspectionTypes: InspectionTypes[];
   roleList:RoleViewModel[];
   userList:RegisterModel[];
   Register= new RegisterModel()
@@ -87,6 +88,9 @@ constructor(private httpClient: HttpClient ,
     
     this.inspectionInfo.UpdatedBy = this.user.userId
     this.inspectionInfo.CreatedBy = this.user.userId
+
+   // this.activeInspectionTypes = this.inspectiontypes.filter(type => type.InspectionVideo === true);
+
   }
 
   checkStatus(status){
@@ -173,12 +177,22 @@ constructor(private httpClient: HttpClient ,
     this.inspectiontypes=[];
     this.inspectionTypeService.GetInspectionTypeList().subscribe((response: InspectionTypes[]) => {
       this.inspectiontypes = response;
-      this.inspectiontypes = this.inspectiontypes.filter(x=>x.IsActive == true)
+      this.activeInspectionTypes = this.inspectiontypes.filter(x=>x.InspectionVideo == true)
+
     },
     (error:any)=> {
       this.toastr.error('Error while fetching Inspection TYpe', 'Error');
       
     });
+  }
+
+  setDefaultValue(event:any){
+    this.inspectionInfo.AmPm = 'AM'; // Set your default radio option here
+  }
+
+  isPmDisabled(): boolean {
+    // Disable the PM radio button if AM is selected by default
+    return this.inspectionInfo.AmPm === 'AM';
   }
 
   convert(str) {

@@ -62,7 +62,6 @@ public partial class GlobalDBContext : DbContext
 
     public virtual DbSet<UserResetPassword> UserResetPasswords { get; set; }
 
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()

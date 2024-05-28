@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -49,6 +50,17 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
+    {
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+       .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+       .AddJsonFile("appsettings.json")
+        .Build();
+
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+        }
+    }
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
 }); 
 

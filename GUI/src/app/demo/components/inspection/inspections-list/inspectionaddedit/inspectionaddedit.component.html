@@ -439,10 +439,10 @@
                 <div class="row">
                     <div class="p-fluid p-formgrid grid gridpadding"> 
                         <div class="field col-12 md:col-4 fieldpadding" >
-                            <label class="lableshow">Inspection Type4:</label>
-                            <input pInputText  type="text" [(ngModel)]="inspectionInfo.InspectionType4"  />
-                            <!-- <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
-                            [(ngModel)]="inspectionInfo.InspectionType4" required></p-dropdown> -->
+                            <label class="lableshow">Video Inspection:</label>
+                            <!-- <input pInputText  type="text" [(ngModel)]="inspectionInfo.InspectionType4"  /> -->
+                            <p-dropdown [options]="activeInspectionTypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" (onChange)="setDefaultValue($event)"
+                            [(ngModel)]="inspectionInfo.InspectionType4" required></p-dropdown>
                         </div>                            
                         <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
                             <label class="lableshow">Status:</label>
@@ -477,7 +477,7 @@
                                 [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
                             <label class="form-check-label" for="AM" >AM</label>&nbsp;
                             <input class="form-check-input" type="radio" style="border-color: black;" name="PM" id="PM" (click)="checkStatus('pm')" value="PM"
-                                [(ngModel)] = "inspectionInfo.AmPm">&nbsp;
+                                [(ngModel)] = "inspectionInfo.AmPm" [disabled]="isPmDisabled()">&nbsp;
                             <label class="form-check-label" for="PM">PM</label>                             
                         </div>
                         <!-- <div class="field col-12 md:col-4 fieldpadding">

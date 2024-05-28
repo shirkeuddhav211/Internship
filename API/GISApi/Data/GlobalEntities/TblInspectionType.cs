@@ -18,4 +18,6 @@ public partial class TblInspectionType
 
     [Required]
     public bool? IsActive { get; set; }
+
+    public bool Video { get; set; }
 }

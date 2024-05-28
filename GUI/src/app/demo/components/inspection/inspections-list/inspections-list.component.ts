@@ -200,7 +200,7 @@ export class InspectionsListComponent {
     this.inspectiontypes=[];
     this.inspectionTypeService.GetInspectionTypeList().subscribe((response: InspectionTypes[]) => {
       this.selectallType = {
-        Id: 0, InspectionTypeName: "Select All", IsActive: true
+        Id: 0, InspectionTypeName: "Select All", IsActive: true, InspectionVideo:true
       }
       this.inspectiontypes = response
       this.inspectiontypes.unshift(this.selectallType)

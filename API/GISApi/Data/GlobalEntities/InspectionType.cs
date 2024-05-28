@@ -14,4 +14,6 @@ public partial class InspectionType
     public string? InspectionTypeName { get; set; }
 
     public bool? IsActive { get; set; }
+
+    public bool? InspectionVideo { get; set; }
 }
