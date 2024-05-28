@@ -196,18 +196,17 @@
                             <label for="password">Password</label>
                             <input pInputText id="password"  [(ngModel)]="login.password"type="password"/>
                         </div>
-                    </div>
-                </div>
-
+                    </div>              
                 <div class="row">
                     <div class="col-4">
                     </div>
-                    <div class="col-4" *ngIf="!isForgotPassword">
+                    <div class="col-4" *ngIf="!isForgotPassword" style="padding-top: 1px;">
                         <button pButton label="Login" style="background-color: #6e087a; color: #ffffff;" class="mt-2"
                             (click)="onSubmit()"></button>
                         <!-- <button pButton  label="Login"  class="p-button-help mt-2"  (click)="onSubmit()"></button> -->
                     </div>
                 </div>
+            </div>
                 <div class="row col-12">
                     <div class="p-fluid p-formgrid grid">
                         <div class="col" *ngIf="!isForgotPassword">
@@ -223,10 +222,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                </div>
                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
-                <div class="p-fluid p-formgrid grid" style="padding-top: 20px;">
                     <div class="field col-12">
                         <a class="font-medium no-underline ml-2 text-right"
                             style="color: var(--secondary-color)">Notice:</a>
@@ -234,8 +230,6 @@
                         <a class="font-medium no-underline ml-2 text-right"
                             style="color: var(--secondary-color)">{{noticeTxt}}</a>
                     </div>
-                </div>
             </div>
         </div>
-        <div class="col-md-4"> </div>
     </div>

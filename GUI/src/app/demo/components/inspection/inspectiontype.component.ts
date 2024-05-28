@@ -33,6 +33,8 @@ export class InspectiontypeComponent {
     if(isEdit == '1'){
       this.isEditInsp = true;
       this.GetInspectionTypeById(+this.inspId);
+    }else {
+      this.inspectionType.IsActive = true; // Set default value for IsActive to true for new inspection types
     }
   }
   
