@@ -50,17 +50,6 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
-    {
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-       .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-       .AddJsonFile("appsettings.json")
-        .Build();
-
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-        }
-    }
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
 }); 
 
