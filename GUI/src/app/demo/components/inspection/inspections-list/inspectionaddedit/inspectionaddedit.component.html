@@ -398,8 +398,9 @@
                     <div class="p-fluid p-formgrid grid gridpadding">  
                         <div class="field col-12 md:col-4 fieldpadding">
                             <label class="lableshow">Inspection Type1:</label>
-                            <p-dropdown class="required showrequired " [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
-                            [(ngModel)]="inspectionInfo.InspectionType1" ></p-dropdown>
+                            <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            [ngClass]="{'required': isInspectionType1Required, 'showrequired': isInspectionType1Required}"
+                            [required]="isInspectionType1Required" [(ngModel)]="inspectionInfo.InspectionType1" ></p-dropdown>
                         </div>
                         <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
                             <label class="lableshow">Status:</label>
@@ -412,7 +413,7 @@
                     <div class="p-fluid p-formgrid grid gridpadding">  
                         <div class="field col-12 md:col-4 fieldpadding">
                             <label class="lableshow">Inspection Type2:</label>
-                            <p-dropdown class="required showrequired" [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
+                            <p-dropdown [options]="inspectiontypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" 
                             [(ngModel)]="inspectionInfo.InspectionType2" ></p-dropdown>
                         </div>                            
                         <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
@@ -441,7 +442,7 @@
                         <div class="field col-12 md:col-4 fieldpadding" >
                             <label class="lableshow">Video Inspection:</label>
                             <!-- <input pInputText  type="text" [(ngModel)]="inspectionInfo.InspectionType4"  /> -->
-                            <p-dropdown [options]="activeInspectionTypes" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" (onChange)="setDefaultValue($event)"
+                            <p-dropdown [options]="activeInspectionTypes" class="showrequired" optionLabel="InspectionTypeName" optionValue="InspectionTypeName" (onChange)="setValidations($event.value)"
                             [(ngModel)]="inspectionInfo.InspectionType4" required></p-dropdown>
                         </div>                            
                         <div class="field col-12 md:col-4 fieldpadding" *ngIf="this.userRole != 'Resident'">
@@ -516,6 +517,9 @@
                                 PM = 1:30 pm to 4:30 pm
                             </Label> 
                         </div> 
+                        <div class="field col-12 md:col-4 fieldpadding" *ngIf="inspectionInfo.InspectionType4" style=" margin-top: 30px; margin-left: 60px;;">
+                            <p style="color: red;">Video inspections are only available in AM, and subject to Inspector’s discretion.</p>
+                          </div>
                     </div>
                 </div>  
                 <div class="row">

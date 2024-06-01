@@ -14,16 +14,17 @@
                                 <label for="Type">Inspection Type</label>
                                 <input pInputText id="Type" type="text" [(ngModel)]="inspectionType.InspectionTypeName" required/>
                             </div>
-                            <div class="field col-12 md:col-4">
-                                <label for="address">Inspection Video</label><br>
-                                <input pInputText type="checkbox" class="form-check-input" id="Check1" [(ngModel)]="inspectionType.InspectionVideo">
-                            </div>
                             
-                            <!-- <div class="field col-12 md:col-4">
+                            <div class="field col-12 md:col-2" *ngIf="isEditInsp == false">
                                 <label for="address">Is Active</label><br>
-                                <input pInputText type="checkbox" class="form-check-input" id="Check1" [(ngModel)]="inspectionType.IsActive" >
-                            </div> -->
-                                                       
+                                <input pInputText type="checkbox" class="form-check-input" id="Check1" [(ngModel)]="inspectionType.IsActive">
+                            </div>
+                                     
+                            <div class="field col-12 md:col-2" *ngIf="isEditInsp == false">
+                                <label for="address">Inspection Video</label><br>
+                                <input pInputText type="checkbox" class="form-check-input" id="Check2" [(ngModel)]="inspectionType.InspectionVideo">
+                            </div>
+
                             </div>
                         </div>
                     </div>

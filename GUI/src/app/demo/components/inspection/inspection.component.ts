@@ -48,7 +48,7 @@ export class InspectionComponent {
     });
   }
 
-  saveInspection(Data: InspectionTypes) {
+  saveInspectionActiveInactive(Data: InspectionTypes) {
     this.inspectionType = Data
     if (this.inspectionType.IsActive == false) {
       this.inspectionType.IsActive = true;
@@ -62,6 +62,22 @@ export class InspectionComponent {
         this.toastr.success('Inspection Type Inactive Successfully');
         // this.router.navigate(["/app/inspectionlist"]); 
       });
+    }
+  }
+
+  saveInspectionVideo(Data: InspectionTypes) {
+    this.inspectionType = Data
+    if (this.inspectionType.InspectionVideo == false) {
+      this.inspectionType.InspectionVideo = true;
+      this.inspectionTypeService.EditInspectionType(this.inspectionType).subscribe((response) => {
+        this.toastr.success('Inspection Video Active Successfully')
+      });
+    }
+    else {
+      this.inspectionType.InspectionVideo = false;
+      this.inspectionTypeService.EditInspectionType(this.inspectionType).subscribe((response) => {
+        this.toastr.success('Inspection Video Inactive Successfully')
+      })
     }
   }
 
